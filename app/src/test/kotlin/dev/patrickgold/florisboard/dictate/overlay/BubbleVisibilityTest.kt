@@ -39,17 +39,23 @@ class BubbleVisibilityTest {
     private fun shown(
         state: DictateController.UiState = DictateController.UiState.Idle,
         focused: Boolean = false,
+        keyboardRequired: Boolean = false,
+        keyboardShown: Boolean = false,
         enabled: Boolean = true,
         hiddenByOwnKeyboard: Boolean = false,
         recognitionActive: Boolean = false,
         screenOn: Boolean = true,
+        allowedInApp: Boolean = true,
     ) = BubbleVisibility.shouldShow(
         enabled = enabled,
         focused = focused,
+        keyboardRequired = keyboardRequired,
+        keyboardShown = keyboardShown,
         state = state,
         hiddenByOwnKeyboard = hiddenByOwnKeyboard,
         recognitionActive = recognitionActive,
         screenOn = screenOn,
+        allowedInApp = allowedInApp,
     )
 
     @Test
@@ -85,12 +91,60 @@ class BubbleVisibilityTest {
         assertFalse(BubbleVisibility.pinsBubble(failed))
     }
 
-    /** Each of the three suppressors wins over both reasons to show, including a live recording. */
+    /** Each of the suppressors wins over both reasons to show, including a live recording. */
     @Test
     fun `the suppressors win over everything`() {
         assertFalse(shown(state = recording, focused = true, enabled = false))
         assertFalse(shown(state = recording, focused = true, hiddenByOwnKeyboard = true))
         assertFalse(shown(state = recording, focused = true, recognitionActive = true))
         assertFalse(shown(state = recording, focused = true, screenOn = false))
+        assertFalse(shown(state = recording, focused = true, allowedInApp = false))
+    }
+
+    /**
+     * The decision behind that last line, written out (#392): a dictation started in one app and carried
+     * into an app the user has filtered the button out of does **not** bring the button with it. "Never
+     * over my banking app" is about the window, and a recording walking in is the one case where the
+     * promise would otherwise break. The recording itself is not this rule's business — it belongs to the
+     * microphone foreground service and keeps running (#293).
+     */
+    @Test
+    fun `a filtered-out app beats a dictation in flight`() {
+        assertTrue(shown(state = recording))
+        assertFalse(shown(state = recording, allowedInApp = false))
+        assertFalse(shown(state = transcribing, allowedInApp = false))
+        assertFalse(shown(focused = true, allowedInApp = false))
+    }
+
+    /**
+     * "Only while the keyboard is open" (#439): WhatsApp focuses its composer the moment a chat is opened,
+     * so the focused field that is enough by default is exactly what must not be enough here.
+     */
+    @Test
+    fun `with the keyboard required a focused field waits for the keyboard`() {
+        assertFalse(shown(focused = true, keyboardRequired = true))
+        assertTrue(shown(focused = true, keyboardRequired = true, keyboardShown = true))
+        // The default is untouched: a keyboard is not needed, and not having one changes nothing.
+        assertTrue(shown(focused = true))
+    }
+
+    /**
+     * It narrows the reason to appear, not what keeps the button up: closing the keyboard in the middle of
+     * a recording keeps the stop button.
+     */
+    @Test
+    fun `with the keyboard required work in flight still pins the button`() {
+        assertTrue(shown(state = recording, keyboardRequired = true))
+        assertTrue(shown(state = transcribing, keyboardRequired = true))
+        assertTrue(shown(state = rewording, keyboardRequired = true))
+        // A resting state is no work in flight, so it waits for the keyboard like anything else.
+        assertFalse(shown(state = failed, focused = true, keyboardRequired = true))
+    }
+
+    /** A keyboard on screen is a condition, not a reason: the suppressors still win over it. */
+    @Test
+    fun `a keyboard on screen does not beat the suppressors`() {
+        assertFalse(shown(focused = true, keyboardRequired = true, keyboardShown = true, hiddenByOwnKeyboard = true))
+        assertFalse(shown(focused = true, keyboardRequired = true, keyboardShown = true, allowedInApp = false))
     }
 }

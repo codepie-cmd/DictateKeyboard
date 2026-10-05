@@ -260,6 +260,15 @@ private fun matchesKind(id: String, kind: ModelKind): Boolean {
         ModelKind.TRANSCRIPTION -> isStt
         ModelKind.CHAT -> !isStt &&
             !l.contains("embedding") && !l.contains("tts") && !l.contains("dall-e") &&
-            !l.contains("image") && !l.contains("moderation") && !l.contains("rerank")
+            !l.contains("image") && !l.contains("moderation") && !l.contains("rerank") &&
+            // BAAI's embedding family, whose ids do not say "embedding" (Scaleway's bge-multilingual-gemma2).
+            !l.contains("bge-") &&
+            // An image generator and a safety classifier, both in OVHcloud's catalog: stable-diffusion-xl,
+            // and Qwen3Guard, which answers with a verdict on the text rather than the text.
+            !l.contains("diffusion") && !l.contains("guard") &&
+            // OpenAI's realtime models answer only on v1/realtime: the page for gpt-realtime-mini lists Chat
+            // Completions as "Not supported" (read 2026-09-30). Picked for rewording, every request is
+            // refused (#416).
+            !l.contains("realtime")
     }
 }

@@ -72,6 +72,7 @@
     <string name="quick_action__clipboard_cut__tooltip">Retalla i desa al porta-retalls</string>
     <string name="quick_action__clipboard_paste" comment="Please mind the limited available space for the quick action strings">Enganxa</string>
     <string name="quick_action__clipboard_paste__tooltip">Enganxa del porta-retalls</string>
+    <string name="quick_action__clipboard_select">Selecciona</string>
     <string name="quick_action__clipboard_select_all" comment="Please mind the limited available space for the quick action strings">Escull tot</string>
     <string name="quick_action__clipboard_select_all__tooltip">Selecciona-ho tot i desa-ho al porta-retalls</string>
     <string name="quick_action__ime_ui_mode_clipboard" comment="Please mind the limited available space for the quick action strings">Porta-retall</string>
@@ -96,8 +97,12 @@
     <string name="quick_action__voice_input__tooltip" comment="IME stands for Input Method Editor and is indirectly equivalent to 'keyboard'.">Obre el proveïdor d\'entrada de veu</string>
     <string name="quick_action__one_handed_mode" comment="Please mind the limited available space for the quick action strings">Amb una mà</string>
     <string name="quick_action__one_handed_mode__tooltip">Passa al mode d\'Amb una mà</string>
+    <string name="quick_action__split_layout" comment="Please mind the limited available space for the quick action strings">Dividit</string>
+    <string name="quick_action__split_layout__tooltip">Passa al teclat dividit</string>
     <string name="quick_action__toggle_number_row" comment="Quick action that shows or hides the row of digit keys above the letters. Please mind the limited available space for the quick action strings">Fila de números</string>
     <string name="quick_action__toggle_number_row__tooltip">Mostra o amaga la fila de números</string>
+    <string name="quick_action__view_numeric_advanced" comment="Quick action that replaces the whole keyboard with a number pad (digits, arithmetic signs, brackets). Not to be confused with the number row above. Please mind the limited available space for the quick action strings">Teclat numèric</string>
+    <string name="quick_action__view_numeric_advanced__tooltip">Canvia al teclat numèric</string>
     <string name="quick_action__drag_marker" comment="This action is only used as a placeholder in the actions editor drag and drop screen and only visible in debug mode">Arrossega</string>
     <string name="quick_action__drag_marker__tooltip" comment="This action is only used as a placeholder in the actions editor drag and drop screen and only visible in debug mode">Posició actual del cursor</string>
     <string name="quick_action__noop" comment="Noop=no operation; this action is only used as a placeholder in the actions editor drag and drop screen">Cap</string>
@@ -130,6 +135,7 @@
     <string name="settings__search__keywords__selection_metrics" comment="NOT SHOWN ANYWHERE — extra search terms that lead to the setting which shows how many words and characters are selected. Translate as the words people in your language would actually type when looking for it, separated by spaces. Do not translate word for word.">comptar paraules nombre de paraules caràcters longitud estadístiques</string>
     <string name="settings__search__keywords__trim_on_copy" comment="NOT SHOWN ANYWHERE — extra search terms that lead to the setting which removes spaces and line breaks at the ends of copied text. Translate as the words people in your language would actually type when looking for it, separated by spaces. Do not translate word for word.">retallar espais eliminar netejar copiar tallar</string>
     <string name="settings__search__keywords__clear_cache">memòria cau espai emmagatzematge fitxers temporals alliberar esborrar netejar</string>
+    <string name="settings__search__keywords__momentary_layer">mantenir lliscar simbol capa puntuacio temporal momentani 123 iphone</string>
     <string name="settings__search__keywords__emoji_row">emoji fila barra recents utilitzats sobre teclat ràpid</string>
     <string name="settings__search__keywords__request_timeout">temps d\'espera timeout lent esperar connexió segons</string>
     <string name="settings__localization__title" comment="Title of languages and Layout screen">Llengües &amp; Disposicions</string>
@@ -177,6 +183,8 @@
     <string name="settings__localization__subtype_delete_confirmation_title" comment="Title of the subtype delete confirmation dialog">Confirmació de la supressió</string>
     <string name="settings__localization__subtype_delete_confirmation_warning" comment="Warning message in the confirmation dialog to confirm the user's intent to delete">Segur que vols suprimir aquest subtipus?</string>
     <string name="settings__theme__title" comment="Title of the Theme screen">Tema</string>
+    <string name="pref__theme__high_contrast__label" comment="Label of the switch that turns on the measured high-contrast theme pair">Contrast alt</string>
+    <string name="pref__theme__high_contrast__summary" comment="Summary of the high-contrast switch. 7:1 is the WCAG AAA contrast ratio for body text; keep the ratio as digits.">Tecles perfilades, cada text mesurat a 7:1. Defineix dia i nit.</string>
     <string name="pref__theme__mode__label" comment="Label of the theme mode preference">Mode del tema</string>
     <string name="pref__theme__sunrise_time__label" comment="Label of the sunrise time preference">Hora de trenc d\'alba</string>
     <string name="pref__theme__sunset_time__label" comment="Label of the sunset time preference">Hora de posta de sol</string>
@@ -346,6 +354,8 @@
     <string name="pref__keyboard__font_size_multiplier__label" comment="Preference title">Multiplicador de la mida de la font</string>
     <string name="pref__keyboard__group_layout__label" comment="Preference group title">Disposició</string>
     <string name="pref__keyboard__landscape_input_ui_mode__label" comment="Preference value">Entrada a pantalla completa apaïsada</string>
+    <string name="pref__keyboard__key_spacing__label" comment="Preference title">Espai entre les tecles</string>
+    <string name="pref__keyboard__key_spacing__summary" comment="Preference summary">{v} % vertical, {h} % horitzontal — un espai més gran fa les tecles més petites, no el teclat.</string>
     <string name="pref__keyboard__group_keypress__label" comment="Preference group title">Tecla premuda</string>
     <string name="pref__keyboard__popup_enabled__label" comment="Preference title">Visibilitat de les tecles emergents</string>
     <string name="pref__keyboard__popup_enabled__summary" comment="Preference summary">Mostra una finestra emergent quan premeu una tecla</string>
@@ -368,6 +378,11 @@
     <string name="pref__smartbar__shared_actions_auto_expand_collapse__label" comment="Preference title">Desplega / Replega automàticament</string>
     <string name="pref__smartbar__shared_actions_auto_expand_collapse__summary" comment="Preference summary">Desplega / Replega automàticament la fila d\'accions en relació amb l\'estat actual</string>
     <string name="pref__smartbar__extended_actions_placement__label" comment="Preference title">Ubicació de la fila d\'accions</string>
+    <string name="settings__smartbar__second_actions__title" comment="Title of the Smartbar second actions screen">Accions secundàries</string>
+    <string name="settings__smartbar__second_actions__summary" comment="Preference summary">Mantén premut un botó de la Smartbar per executar una acció secundària</string>
+    <string name="settings__smartbar__second_actions__note" comment="Header of the screen while nothing is being paired: says what to do">Toca un botó i després l\'acció que ha d\'executar quan el mantinguis premut. Tots dos conserven el seu propi botó — amaga\'n un a l\'editor d\'accions del teclat per alliberar l\'espai.</string>
+    <string name="settings__smartbar__second_actions__hint_pick_second" comment="Header while a button is selected; {action} is that button's name">Què ha d\'executar {action} quan es manté premut?</string>
+    <string name="settings__smartbar__second_actions__section_child_only" comment="Heading above the buttons that cannot carry a second action">Només com a acció secundària — aquests botons es repeteixen en mantenir-los o ja tenen la seva pròpia funció de manteniment</string>
     <!-- Typing strings -->
     <string name="settings__typing__title" comment="Title of Typing screen">Escriptura</string>
     <string name="pref__suggestion__title" comment="Preference group title">Suggeriments</string>
@@ -382,6 +397,8 @@
     <string name="pref__correction__auto_capitalization__summary" comment="Preference summary">Posa en majúscula les paraules en base al context d\'entrada actual</string>
     <string name="pref__correction__auto_space_punctuation__label" comment="Preference title">Espaiat automàtic després de punt</string>
     <string name="pref__correction__auto_space_punctuation__summary" comment="Preference summary">Insereix automàticament un espai després de posar un punt</string>
+    <string name="pref__correction__tighten_punctuation_spacing__label" comment="Preference title">Sense espai abans de la puntuació</string>
+    <string name="pref__correction__tighten_punctuation_spacing__summary" comment="Preference summary">Elimina l\'espai escrit abans de . , ? !</string>
     <string name="pref__correction__remember_caps_lock_state__label" comment="Preference title">Recorda l\'estat de bloqueig de les majúscules</string>
     <string name="pref__correction__remember_caps_lock_state__summary" comment="Preference summary">Es mantindrà el bloqueig de les majúscules en moure\'s a un altre camp de text</string>
     <string name="pref__correction__double_space_period__label" comment="Preference title">Doble pulsació a la barra espaiadora</string>
@@ -459,9 +476,12 @@
     <string name="pref__gestures__swipe_left__label" comment="Preference title">En lliscar cap a l\'esquerra</string>
     <string name="pref__gestures__swipe_right__label" comment="Preference title">En lliscar cap a la dreta</string>
     <string name="pref__gestures__space_bar_swipe_up__label" comment="Preference title">Lliscar cap amunt a la barra espaiadora</string>
+    <string name="pref__gestures__space_bar_swipe_down__label" comment="Preference title">Lliscar cap avall a la barra espaiadora</string>
     <string name="pref__gestures__space_bar_swipe_left__label" comment="Preference title">Lliscar cap a l\'esquerra a la barra espaiadora</string>
     <string name="pref__gestures__space_bar_swipe_right__label" comment="Preference title">Lliscar cap a la dreta a la barra espaiadora</string>
     <string name="pref__gestures__space_bar_long_press__label" comment="Preference title">Toc llarg a la barra espaiadora</string>
+    <string name="pref__gestures__momentary_layer__label" comment="Preference title, keep short">Mantén premut per obrir una capa</string>
+    <string name="pref__gestures__momentary_layer__summary" comment="Preference summary, keep short (one line)">Mantén ?123, llisca fins a un caràcter i deixa anar: s’insereix i tornen les lletres</string>
     <string name="pref__gestures__delete_key_swipe_left__label" comment="Preference title">Lliscar cap a l\'esquerra a la tecla suprimeix</string>
     <string name="pref__gestures__delete_key_long_press__label" comment="Preference title">Toc llarg a la tecla suprimeix</string>
     <string name="pref__gestures__swipe_velocity_threshold__label" comment="Preference title">Límit de velocitat del lliscament</string>
@@ -579,6 +599,7 @@
     <string name="crash_multiple_notification__title" comment="Title of the notification for consecutive crashes">Sembla que Dictate ha deixat de funcionar repetidament…</string>
     <string name="crash_multiple_notification__body" comment="Body of the notification for consecutive crashes">Tornant al teclat anterior per aturar el bucle de fallada infinit. Toca per veure els detalls de l\'error</string>
     <!-- Clipboard strings -->
+    <string name="editing__back_to_keyboard">Torna al teclat</string>
     <string name="clipboard__header_title">Porta-retalls</string>
     <string name="clipboard__search_placeholder" comment="Hint inside the clipboard search field">Cerca al porta-retalls</string>
     <string name="clipboard__search_no_results" comment="Shown when no clip contains what was typed">Cap element no conté això</string>
@@ -592,6 +613,7 @@
     <string name="clipboard__group_pinned">Fixat</string>
     <string name="clipboard__group_recent">Recent</string>
     <string name="clipboard__group_other">Altres</string>
+    <string name="pref__clipboard__history_pinned_on_top__label">Elements fixats a dalt</string>
     <string name="clipboard__item_description_email">Correu</string>
     <string name="clipboard__item_description_url">Enllaç</string>
     <string name="clipboard__item_description_phone">Telèfon</string>
@@ -615,6 +637,7 @@
     <string name="pref__clipboard__trim_on_copy__label" comment="Preference title, keep short">Retalla en copiar</string>
     <string name="pref__clipboard__trim_on_copy__summary" comment="Preference summary, keep short (one line)">Elimina espais i salts de línia dels extrems</string>
     <string name="pref__clipboard__suggestion_enabled__summary" comment="Preference summary">Suggereix continguts copiats prèviament al porta-retalls</string>
+    <string name="pref__clipboard__suggestion_show_extracted__label" comment="Preference title (switch) in the group Clipboard suggestions, keep short (one line): whether the links, email addresses and phone numbers found inside a copied text are also offered as suggestions of their own, next to the whole text">Enllaços, correus i números</string>
     <string name="pref__clipboard__num_history_grid_columns__label">Nombre de columnes de la graella</string>
     <string name="pref__clipboard__suggestion_timeout__label" comment="Preference title; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__summary` and is the first part">Limita els suggeriments del porta-retalls a</string>
     <string name="pref__clipboard__suggestion_timeout__summary" comment="Preference summary; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__label` and is the second part">Entrades copiades en els darrers {v} s</string>
@@ -943,6 +966,7 @@
     <string name="enum__swipe_action__move_cursor_start_of_page" comment="Enum value label">Mou el cursor al principi de la pàgina</string>
     <string name="enum__swipe_action__move_cursor_end_of_page" comment="Enum value label">Mou el cursor al final de la pàgina</string>
     <string name="enum__swipe_action__switch_to_clipboard_context" comment="Enum value label">Obre l\'historial/administrador del porta-retalls</string>
+    <string name="enum__swipe_action__switch_to_editing_context">Obre el tauler d\'edició de text</string>
     <string name="enum__swipe_action__shift" comment="Enum value label">Majúscules</string>
     <string name="enum__swipe_action__redo" comment="Enum value label">Refés</string>
     <string name="enum__swipe_action__undo" comment="Enum value label">Desfés</string>
@@ -992,6 +1016,12 @@
         <item quantity="other">{v} suggeriments</item>
     </plurals>
     <!-- Dictate strings -->
+    <string name="quick_action__ime_ui_mode_editing">Edició de text</string>
+    <string name="quick_action__ime_ui_mode_editing__tooltip">Mou el cursor, selecciona i edita el text</string>
+    <string name="quick_action__ime_ui_mode_scan">Escaneja text</string>
+    <string name="quick_action__ime_ui_mode_scan__tooltip">Fotografia un text imprès i insereix-lo</string>
+    <string name="quick_action__translate">Tradueix</string>
+    <string name="quick_action__translate__tooltip">Tradueix mentre escrius, en aquest dispositiu</string>
     <string name="quick_action__ime_ui_mode_dictate">Dictate</string>
     <string name="quick_action__ime_ui_mode_dictate__tooltip">Toca per dictar, torna a tocar per transcriure</string>
     <string name="quick_action__dictate_live_prompt">Instrucció en directe</string>
@@ -1068,10 +1098,16 @@
     <string name="dictate__floating_button_disclosure_continue">Obre la configuració</string>
     <string name="dictate__floating_button_mic_title">Accés al micròfon</string>
     <string name="dictate__floating_button_mic_summary">Necessari per gravar la teva veu · toca per concedir</string>
-    <string name="dictate__floating_button_show_with_keyboard_title">Mostra amb el teclat Dictate</string>
-    <string name="dictate__floating_button_show_with_keyboard_summary_on">El botó també apareix mentre el teclat Dictate està actiu.</string>
-    <string name="dictate__floating_button_show_with_keyboard_summary_off">Amagat mentre el teclat Dictate està actiu, ja que aquest ja té una tecla de micròfon.</string>
+    <string name="dictate__floating_button_show_when_title">Quan mostrar-lo</string>
+    <string name="dictate__floating_button_show_when_field">Tan bon punt se selecciona un camp de text</string>
+    <string name="dictate__floating_button_show_when_keyboard">Només amb el teclat obert</string>
+    <string name="dictate__floating_button_show_when_dictate_keyboard">També amb el teclat Dictate</string>
     <string name="dictate__action_continue_recording">Continua la gravació</string>
+    <string name="dictate__a11y_mic_hold_local">Transcriu al dispositiu</string>
+    <string name="smartbar__a11y_show_actions">Mostra les accions</string>
+    <string name="smartbar__a11y_show_suggestions">Mostra els suggeriments</string>
+    <string name="smartbar__a11y_show_more_actions">Mostra més accions</string>
+    <string name="smartbar__a11y_hide_more_actions">Amaga les accions addicionals</string>
     <string name="dictate__floating_button_auto_dim_summary_off">Es manté sempre totalment visible.</string>
     <string name="dictate__floating_button_auto_dim_summary_on">Es redueix a un petit punt després d’uns segons; toca per restaurar.</string>
     <string name="dictate__floating_button_auto_dim_title">Atenua en repòs</string>
@@ -1088,6 +1124,17 @@
     <string name="dictate__floating_button_design_pill_summary">S’amplia quan està actiu per mostrar un temporitzador i una forma d’ona en directe.</string>
     <string name="dictate__floating_button_design_ring">Anella</string>
     <string name="dictate__floating_button_design_ring_summary">Cercle compacte amb una anella animada mentre es grava i es transcriu.</string>
+    <string name="dictate__floating_button_apps_title">Visibilitat per aplicació</string>
+    <string name="dictate__floating_button_apps_summary_all">A totes les aplicacions</string>
+    <string name="dictate__floating_button_apps_summary_only">Només a {n} aplicacions</string>
+    <string name="dictate__floating_button_apps_summary_except">A tot arreu excepte a {n} aplicacions</string>
+    <string name="dictate__floating_button_apps_scope_all">Totes les aplicacions</string>
+    <string name="dictate__floating_button_apps_scope_only">Només les aplicacions de sota</string>
+    <string name="dictate__floating_button_apps_scope_except">Totes excepte les aplicacions de sota</string>
+    <string name="dictate__floating_button_apps_note">El botó no es dibuixa mai sobre una aplicació que deixis fora, i Dictate no en llegeix els camps de text. Una aplicació que rebutja els serveis d\'accessibilitat en general continuarà veient que el servei està activat.</string>
+    <string name="dictate__floating_button_apps_list_title">Aplicacions</string>
+    <string name="dictate__floating_button_apps_search">Cerca aplicacions</string>
+    <string name="dictate__floating_button_apps_none">No s\'ha trobat cap aplicació per a «{search_term}»</string>
     <string name="dictate__floating_button_design_title">Estil del botó</string>
     <string name="dictate__floating_button_haptic_summary_off">Sense vibració en tocar.</string>
     <string name="dictate__floating_button_haptic_summary_on">Una vibració breu en tocar el botó.</string>
@@ -1105,7 +1152,7 @@
     <string name="dictate__floating_button_snap_title">Ajusta a la vora</string>
     <string name="dictate__interrupted_recording">Interromput ({time})</string>
     <string name="dictate__providers_summary_both">Transcripció: {transcription} · Reformulació: {rewording}</string>
-    <string name="dictate__remember_last_dictation_summary">Conserva el teu últim dictat perquè el puguis tornar a inserir amb el botó Reinsereix de la Smartbar.</string>
+    <string name="dictate__remember_last_dictation_summary">Conserva l\'últim dictat perquè el botó flotant el pugui desfer i la disposició clàssica el pugui tornar a inserir.</string>
     <string name="dictate__remember_last_dictation_title">Recorda l’últim dictat</string>
     <string name="changelog__v4_2_0">• NOU: botó de dictat flotant — dicta directament a qualsevol app, fins i tot amb un altre teclat actiu. Tria entre tres estils (Píndola, Anella, Esfera), mira una forma d’ona en directe mentre parles, arrossega’l on vulguis amb ajust a les vores, defineix-ne el color i la mida i mantén premut per reformular. Activa’l a Configuració ▸ Dictate ▸ Botó flotant.\n• NOU: Google Gemini — fes servir la teva pròpia clau d’API d’AI Studio per a la transcripció i la reformulació.\n• Les indicacions ara apareixen per defecte en una fila fixa damunt de les tecles.\n• Inserció de text més fiable entre apps, inclosos navegadors i altres teclats.</string>
     <string name="dictate__promo_floating_button_message">Nou: dicta a qualsevol app</string>
@@ -1206,15 +1253,45 @@
     <string name="dictate__providers_cap_chat">Reformulació</string>
     <string name="dictate__providers_add_custom">Afegeix el teu propi servidor</string>
     <string name="dictate__providers_add_custom_summary">Autoallotjat o qualsevol endpoint compatible amb OpenAI: per a reconeixement de veu i reformulació</string>
+    <string name="dictate__providers_add">Afegeix un proveïdor</string>
+    <string name="dictate__providers_search">Cerca proveïdors</string>
+    <string name="dictate__providers_filter_eu">UE</string>
+    <string name="dictate__providers_add_none">Cap proveïdor coincideix</string>
     <string name="dictate__providers_azure_endpoint">L\'endpoint és al costat de la clau a la pàgina «Keys and Endpoint» del portal. MAI-Transcribe només funciona a East US, West US, West US 2, North Europe, Southeast Asia i Central India.</string>
     <string name="dictate__providers_ollama_no_stt">L\'Ollama no té cap endpoint de reconeixement de veu, així que només pot reformular. Per dictar a través d\'un servidor teu, engega un servidor de veu (com ara Speaches, faster-whisper-server o whisper.cpp) i afegeix-lo a «Afegeix el teu propi servidor» — o fes servir el motor al dispositiu, que no necessita cap servidor.</string>
+    <string name="dictate__providers_region_title">Regió</string>
+    <string name="dictate__providers_region_us">Estats Units</string>
+    <string name="dictate__providers_region_eu">Unió Europea</string>
+    <string name="dictate__providers_region_jp">Japó</string>
+    <string name="dictate__providers_region_in">Índia</string>
+    <string name="dictate__providers_region_global">Tot el món</string>
     <string name="dictate__providers_custom_title">Servidor personalitzat</string>
+    <string name="dictate__providers_get_key">Obtén una clau API</string>
     <string name="dictate__providers_field_name">Nom</string>
     <string name="dictate__providers_field_transcription_model">Model de transcripció</string>
     <string name="dictate__providers_field_chat_model">Model de reformulació</string>
     <string name="dictate__providers_test">Prova la connexió</string>
-    <string name="dictate__providers_test_success">Connectat · {count} models</string>
-    <string name="dictate__providers_test_failed">Ha fallat la connexió</string>
+    <string name="dictate__providers_test_transcribe">Prova la transcripció</string>
+    <string name="dictate__providers_check_no_key">Introduïu primer la clau API.</string>
+    <string name="dictate__providers_check_credentials_ok">Credencials verificades · {count} models</string>
+    <string name="dictate__providers_check_credentials_ok_nocount">Credencials verificades</string>
+    <string name="dictate__providers_check_endpoint_ok">S’ha arribat al servidor · {count} models</string>
+    <string name="dictate__providers_check_credentials_untested">La transcripció no s’ha provat.</string>
+    <string name="dictate__providers_check_transcription_ok">Transcripció verificada</string>
+    <string name="dictate__providers_check_transcription_text">Ha tornat com a: «{text}»</string>
+    <string name="dictate__providers_check_transcription_empty">La petició ha passat, però no ha tornat cap text: la connexió funciona, però aquest model no ha entès la mostra.</string>
+    <string name="dictate__providers_check_failed_connection">La prova de connexió ha fallat</string>
+    <string name="dictate__providers_check_failed_transcription">La prova de transcripció ha fallat</string>
+    <string name="dictate__providers_check_err_auth">La clau s’ha rebutjat. Comproveu-la i que l’adreça pertanyi al mateix compte.</string>
+    <string name="dictate__providers_check_err_quota">La clau funciona, però el compte no té quota o ha superat un límit. Reviseu el vostre pla amb el proveïdor.</string>
+    <string name="dictate__providers_check_err_network">No s’ha pogut arribar al servidor. Comproveu l’adreça i la connexió a internet.</string>
+    <string name="dictate__providers_check_err_timeout">Sense resposta a temps. El proveïdor pot estar ocupat: torneu-ho a provar.</string>
+    <string name="dictate__providers_check_err_server">El proveïdor ha informat d’un error propi. Aquí no hi ha res a canviar; torneu-ho a provar més tard.</string>
+    <string name="dictate__providers_check_err_format">El proveïdor ha rebutjat la mostra d’àudio. Potser no accepta aquest format.</string>
+    <string name="dictate__providers_check_err_unknown">La petició ha fallat.</string>
+    <string name="dictate__providers_azure_link_signup">Crea un compte d’Azure</string>
+    <string name="dictate__providers_azure_link_portal">Portal d’Azure</string>
+    <string name="dictate__providers_azure_link_guide">Guia de configuració</string>
     <string name="dictate__providers_network_group">Xarxa</string>
     <string name="dictate__request_timeout_title">Temps d\'espera de la sol·licitud</string>
     <string name="dictate__request_timeout_summary">{v} s · augmenta\'l si el teu servidor és lent</string>
@@ -1255,8 +1332,10 @@
     <string name="dictate__recording_animation_static_description">Es manté un punt vermell fix mentre graveu</string>
     <string name="dictate__recording_animation_pulse_label">Polsant</string>
     <string name="dictate__recording_animation_pulse_description">Batega a un ritme constant</string>
-    <string name="dictate__recording_animation_level_label">Segueix la vostra veu</string>
+    <string name="dictate__recording_animation_level_label">Segueix la vostra veu (punt)</string>
     <string name="dictate__recording_animation_level_description">Reacciona al nivell del micròfon i mostra que us capta</string>
+    <string name="dictate__recording_animation_wave_label">Segueix la vostra veu (ona)</string>
+    <string name="dictate__recording_animation_wave_description">Dibuixa els darrers segons com una ona en directe, així veieu quan heu callat</string>
     <string name="dictate__skip_silent_title">Omet les gravacions silencioses</string>
     <string name="dictate__skip_silent_summary">Evita el text al·lucinat i les crides a l\'API inútils en àudio silenciós</string>
     <string name="dictate__trim_silent_gaps_title">Retalla les pauses llargues</string>
@@ -1320,7 +1399,13 @@
     <string name="dictate__languages_title">Idiomes de transcripció</string>
     <string name="dictate__languages_summary">Tria els idiomes en què dictes. Canvia ràpidament d\'un a l\'altre des de la barra de gravació.</string>
     <string name="dictate__language_detect">Detecta automàticament</string>
+    <string name="dictate__languages_selected_title">Idiomes seleccionats</string>
     <string name="dictate__languages_active_title">Idioma actiu</string>
+    <string name="dictate__languages_follow_keyboard">Segueix l\'idioma del teclat</string>
+    <string name="dictate__languages_follow_keyboard_summary">També canvia el dictat, si l\'idioma està seleccionat</string>
+    <string name="quick_action__dictate_switch_provider">Proveïdor de transcripció</string>
+    <string name="quick_action__dictate_switch_provider__tooltip">Canvia el proveïdor de transcripció</string>
+    <string name="enum__space_bar_mode__transcription_provider">Proveïdor de transcripció</string>
     <string name="dictate__prompt_selection_none">Cap</string>
     <string name="dictate__prompt_selection_predefined">Per defecte</string>
     <string name="dictate__prompt_selection_custom">Personalitzat</string>
@@ -1333,6 +1418,26 @@
     <string name="dictate__custom_words_title">Paraules personalitzades</string>
     <string name="dictate__custom_words_summary_empty">Afegeix noms o termes tècnics perquè s\'escriguin correctament</string>
     <string name="dictate__custom_words_placeholder">p. ex. FlorisBoard, Kubernetes, Renée, OAuth, Anthropic</string>
+    <string name="dictate__custom_words_summary">{count} paraules · uns {tokens} de {budget} tokens</string>
+    <string name="dictate__custom_words_budget_info">Cada paraula d\'aquí viatja amb cada dictat, i el model de veu només en llegeix uns {budget} tokens de context. La teva llista n\'ocupa uns {tokens}.</string>
+    <string name="dictate__custom_words_budget_over">La teva llista és més llarga del que el model de veu llegeix. Unes {fits} de les teves {count} paraules hi arriben; la resta s\'envia a cada dictat i s\'ignora. Per a un vocabulari més ampli fes servir les correspondències personalitzades: són exactes, funcionen sense connexió i no costen res.</string>
+    <string name="dictate__custom_words_import">Importa una llista de paraules</string>
+    <string name="dictate__custom_words_export">Exporta la llista de paraules</string>
+    <string name="dictate__custom_words_export_filename">dictate_words.txt</string>
+    <string name="dictate__custom_words_import_title">Importa una llista de paraules</string>
+    <string name="dictate__custom_words_import_fitting">{count} paraules noves d\'aquest fitxer caben a la teva llista.</string>
+    <string name="dictate__custom_words_import_known">{count} ja hi eren.</string>
+    <string name="dictate__custom_words_import_nofit">{count} han quedat fora: el model de veu només llegeix uns {budget} tokens de context, així que s\'haurien enviat a cada dictat i s\'haurien ignorat.</string>
+    <string name="dictate__custom_words_import_unusable">{count} línies no contenien res per escriure i s\'han omès.</string>
+    <string name="dictate__custom_words_import_truncated">Només s\'han llegit les primeres {count} entrades del fitxer.</string>
+    <string name="dictate__custom_words_import_also_dictionary">Afegeix-les també al diccionari personal</string>
+    <string name="dictate__custom_words_import_also_dictionary_summary">Aquesta llista només diu al model de veu com s\'escriu una paraula. El diccionari personal és el que el teclat fa servir mentre escrius: no té límit de longitud, així que hi entren totes les paraules del fitxer, no només les que caben a dalt.</string>
+    <string name="dictate__custom_words_import_empty">No s\'ha trobat cap paraula en aquest fitxer</string>
+    <string name="dictate__custom_words_import_done">{count} paraules afegides</string>
+    <string name="dictate__custom_words_import_done_dictionary">{count} paraules afegides i {dict} al teu diccionari personal</string>
+    <string name="dictate__file_unreadable">No s\'ha pogut llegir aquest fitxer</string>
+    <string name="dictate__file_export_done">Fitxer desat</string>
+    <string name="dictate__file_export_failed">No s\'ha pogut escriure aquest fitxer</string>
     <string name="dictate__rewording_group">Reformulació (edició amb IA)</string>
     <string name="dictate__rewording_title">Reformulació (IA)</string>
     <string name="dictate__rewording_summary_on">Activat – reformula, tradueix i formata amb IA</string>
@@ -1347,6 +1452,12 @@
     <string name="dictate__manage_prompts_title">Gestiona els prompts</string>
     <string name="dictate__manage_prompts_summary">{count} prompts</string>
     <string name="dictate__manage_prompts_summary_loading">Afegeix, edita i elimina els teus prompts</string>
+    <string name="dictate__command_word_title">Paraula d\'ordre</string>
+    <string name="dictate__command_word_off">Desactivat</string>
+    <string name="dictate__command_word_summary">Els dictats que comencen amb «{word}» s\'executen com una instrucció en directe</string>
+    <string name="dictate__command_word_placeholder">Jarvis</string>
+    <string name="dictate__command_word_info_title">Sobre la paraula d\'ordre</string>
+    <string name="dictate__command_word_info_description">Normalment Dictate escriu el que dius. Si defineixes una paraula d\'ordre, un dictat que hi comenci es converteix en una instrucció: la paraula s\'elimina i la resta s\'envia a la IA, juntament amb el text seleccionat si n\'hi ha.\n\n«Jarvis, fes-ho més formal» reescriu la selecció. «Jarvis, quina és la capital del Japó» escriu la resposta al camp. És el botó d\'instrucció en directe, al qual arribes dient-ne el nom en lloc de tocar-lo.\n\nLa paraula només compta al principi del dictat i només com a paraula sencera, així que tria alguna cosa amb què rarament comencis una frase.</string>
     <string name="dictate__auto_formatting_title">Formatació automàtica</string>
     <string name="dictate__auto_formatting_summary">Converteix les indicacions de format dictades en Markdown (encapçalaments, llistes, …)</string>
     <string name="dictate__system_prompt_title">Instrucció de reformulació</string>
@@ -1491,6 +1602,12 @@
     <string name="dictate__local_model_none_selected">Encara no s’ha baixat cap model</string>
     <string name="dictate__local_model_delete_confirm">Vols eliminar «{model}»? El pots tornar a baixar més tard.</string>
     <string name="dictate__local_model_not_installed_error">Cap model local baixat</string>
+    <string name="dictate__local_model_family_installed">{count} de {total} instal·lats</string>
+    <string name="dictate__local_model_family_open">Mostra les variants</string>
+    <plurals name="dictate__local_model_languages">
+        <item quantity="one">{count} idioma</item>
+        <item quantity="other">{count} idiomes</item>
+    </plurals>
     <string name="dictate__local_fallback_title">Alternativa fora de línia</string>
     <string name="dictate__local_fallback_summary">Quan no tens connexió, transcriu localment amb el model baixat després que falli el proveïdor</string>
     <string name="backup_and_restore__back_up__files_dictate_prompts">Indicacions de reformulació desades</string>
@@ -1498,6 +1615,8 @@
     <string name="dictate__floating_button_copy_to_clipboard_title">Copia cada dictat al porta-retalls</string>
     <string name="dictate__floating_button_copy_to_clipboard_summary_on">Cada dictat també es copia al porta-retalls, perquè el puguis enganxar manualment si la inserció falla. Pot mostrar un avís del porta-retalls en alguns telèfons.</string>
     <string name="dictate__floating_button_copy_to_clipboard_summary_off">Els dictats només s\'insereixen, no es copien al porta-retalls.</string>
+    <string name="dictate__floating_button_menu_group">Menú en mantenir premut</string>
+    <string name="dictate__floating_button_menu_settings_title">Configuració de Dictate</string>
     <string name="dictate__floating_button_undo_summary_off">No es mostra cap botó per desfer.</string>
     <string name="dictate__floating_button_undo_summary_on">Després d\'un dictat, apareix un botó per desfer al costat del botó per eliminar el text inserit amb un sol toc.</string>
     <string name="dictate__floating_button_undo_title">Botó per desfer</string>
@@ -1512,6 +1631,16 @@
     <string name="dictate__mappings_field_to_placeholder">p. ex. GitHub</string>
     <string name="dictate__mappings_group">Regles de substitució</string>
     <string name="dictate__mappings_matchcase_summary">Substitueix només quan les majúscules i minúscules coincideixin exactament.</string>
+    <string name="dictate__mappings_import">Importa regles</string>
+    <string name="dictate__mappings_export">Exporta regles</string>
+    <string name="dictate__mappings_export_filename">dictate_mappings.tsv</string>
+    <string name="dictate__mappings_import_title">Importa regles</string>
+    <string name="dictate__mappings_import_message">{count} regles noves en aquest fitxer. Vols afegir-les a la teva llista?</string>
+    <string name="dictate__mappings_import_known">{count} ja hi eren.</string>
+    <string name="dictate__mappings_import_unusable">{count} línies no indicaven cap substitució i s\'han omès.</string>
+    <string name="dictate__mappings_import_format">Una regla per línia: què se sent, un tabulador, en què s\'ha de convertir.</string>
+    <string name="dictate__mappings_import_empty">No s\'ha trobat cap regla en aquest fitxer</string>
+    <string name="dictate__mappings_import_done">{count} regles afegides</string>
     <string name="dictate__mappings_matchcase_title">Distingeix majúscules</string>
     <string name="dictate__mappings_opt_caseinsensitive">Ignora majúscules</string>
     <string name="dictate__mappings_opt_casesensitive">Distingeix majúscules</string>
@@ -1584,6 +1713,26 @@
     <string name="dictate__history_clear_title">Voleu esborrar l\'historial?</string>
     <string name="dictate__history_clear_message">Això suprimeix permanentment totes les entrades de l\'historial i qualsevol àudio retingut.</string>
     <string name="dictate__history_clear_confirm">Esborra-ho tot</string>
+    <string name="dictate__history_export_title">Exporta a una carpeta</string>
+    <string name="dictate__history_export_summary">Cada nou dictat també s\'escriu en aquesta carpeta com a fitxer de text, tan bon punt acaba.</string>
+    <string name="dictate__history_export_folder">Carpeta</string>
+    <string name="dictate__history_export_folder_unset">Sense definir</string>
+    <string name="dictate__history_export_folder_unavailable">Carpeta no disponible — torna a triar-la</string>
+    <string name="dictate__history_export_choose">Tria una carpeta</string>
+    <string name="dictate__history_export_change">Canvia</string>
+    <string name="dictate__history_export_disconnect">Desconnecta</string>
+    <string name="dictate__history_export_audio_title">Exporta també l\'enregistrament</string>
+    <string name="dictate__history_export_audio_summary">Desa l\'àudio al costat de la transcripció.</string>
+    <string name="dictate__history_export_audio_needs_retention">Cal «Conserva l\'àudio».</string>
+    <string name="dictate__history_export_all">Exporta-ho tot ara</string>
+    <string name="dictate__history_export_all_summary">Escriu cada dictat que encara no és a la carpeta: els anteriors a triar-la i els que l\'aplicació no va poder escriure mentre la carpeta no era accessible.</string>
+    <string name="dictate__history_export_all_result">{written} escrits, {skipped} ja hi eren, {failed} fallits</string>
+    <string name="dictate__history_export_last_failure">Una escriptura ha fallat {when}. «Exporta-ho tot ara» recupera el que falta.</string>
+    <string name="dictate__history_export_warning_title">Què hi acaba</string>
+    <string name="dictate__history_export_warning_message">La carpeta contindrà el text de cada dictat que facis a partir d\'ara, i també els enregistraments si ho actives. Tot el que la sincronitzi — un client al núvol, una eina de còpia de seguretat, una altra aplicació — s\'emporta aquestes transcripcions fora d\'aquest dispositiu.\n\nDictate continua escrivint fins que desconnectis la carpeta i mai no hi esborra res: les entrades que surten de l\'historial es queden a la carpeta. Els camps de contrasenya i d\'incògnit no es registren mai i, per tant, no s\'exporten mai.</string>
+    <string name="dictate__history_export_needs_history">L\'exportació a carpeta escriu el que registra l\'historial, així que l\'historial ha d\'estar activat.</string>
+    <string name="dictate__history_export_enable_history">Activa l\'historial</string>
+    <string name="dictate__history_export_pick_failed">No s\'ha pogut obtenir accés d\'escriptura a aquesta carpeta</string>
     <string name="dictate__stats_empty">Encara no hi ha dictats — les estadístiques apareixeran aquí quan comencis a dictar.</string>
     <string name="dictate__stats_time_saved">Temps estalviat</string>
     <string name="dictate__stats_time_saved_sub">respecte a escriure</string>
@@ -1864,6 +2013,72 @@
     <string name="apptour61__outro_eyebrow">Això és la 6.1</string>
     <string name="apptour61__outro_title">El mateix teclat, amb menys arestes</string>
     <string name="apptour61__outro_body">No canvia res en la manera com ja dictes — la teva clau, el teu servidor o un model al dispositiu. Retrobaràs totes les visites a Configuració › Quant a.</string>
+    <string name="apptour62__cta_try">Prova-ho</string>
+    <string name="apptour62__cta_manage">On desactivar-ho</string>
+    <string name="apptour62__art_word">Zoya</string>
+    <string name="apptour62__art_emoji_word">pastís</string>
+    <string name="apptour62__art_emoji">🍰</string>
+    <string name="apptour62__intro_eyebrow">Dictate 6.2</string>
+    <string name="apptour62__intro_title">Aprèn les teves paraules i estrena cinc aspectes</string>
+    <string name="apptour62__intro_body">El teclat pot recordar les paraules que cap diccionari coneix, les tecles poden deixar veure l\'aplicació al darrere i cada polze pot tenir la seva meitat. A més d\'un grapat de petits ajudants per al que fas cada dia.</string>
+    <string name="apptour62__learning_eyebrow">Nou: aprèn mentre escrius</string>
+    <string name="apptour62__learning_title">Les paraules que cap diccionari coneix</string>
+    <string name="apptour62__learning_body">Escriu un nom o un terme prou vegades i el teclat se\'l queda: deixa de marcar-lo com un error i comença a suggerir-lo. Aquesta actualització l\'activa per a tothom, també per a qui l\'hagués desactivat. No s\'aprèn res en mode d\'incògnit, ni als camps de contrasenya, ni de res que no hagis escrit tecla a tecla; tot es queda en aquest dispositiu, i el botó de sota obre la llista — i l\'interruptor.</string>
+    <string name="apptour62__themes_eyebrow">Cinc aspectes nous</string>
+    <string name="apptour62__themes_title">Glass, Sand, Deep i un E-Ink fosc</string>
+    <string name="apptour62__themes_body">Dictate Glass deixa veure l\'aplicació pels espais entre les tecles, mentre que les tecles es mantenen prou opaques per llegir-hi a sobre; Glass Clear va més enllà i queda més bonic, al preu que el text de les aplicacions que dibuixen darrere del teclat s\'hi transparenti. Sand és un tema clar i càlid, Deep un de fosc i tranquil, i E-Ink finalment té versió nocturna, de manera que el canvi automàtic ja no et dona un teclat blanc quan es fa fosc.</string>
+    <string name="apptour62__split_eyebrow">Nou: teclat dividit</string>
+    <string name="apptour62__split_title">Els dos polzes, sense estirar-se</string>
+    <string name="apptour62__split_body">Una acció ràpida nova, al costat del mode d\'una mà i el flotant, separa les files perquè cada polze es quedi a la seva meitat. Es divideixen totes les disposicions, no només QWERTY, perquè la junta es calcula a partir de l\'amplada de les tecles en comptes d\'escriure-la a cada disposició. I en horitzontal l\'aplicació ara es manté visible sempre que hi hagi espai per a totes dues.</string>
+    <string name="apptour62__emoji_eyebrow">Emojis</string>
+    <string name="apptour62__emoji_title">La paraula troba el seu emoji</string>
+    <string name="apptour62__emoji_body">Escriu una paraula i l\'emoji que la significa apareix a la barra de suggeriments, en una cinquantena de llengües i a partir de les mateixes dades que fa servir el sistema. Hi va al costat dels suggeriments en comptes de prendre\'ls el lloc. També hi ha una fila opcional amb els teus emojis fixats i recents sobre les tecles.</string>
+    <string name="apptour62__helpers_eyebrow">Quatre petits ajudants</string>
+    <string name="apptour62__helpers_title">Incògnit, enllaços nets i la resposta al càlcul</string>
+    <string name="apptour62__helpers_body">El mode d\'incògnit evita que es recordi res mentre és actiu: no s\'aprèn res ni es guarda res. Als enllaços enganxats se\'ls poden treure els paràmetres de seguiment abans d\'arribar al camp. Escriu una operació acabada en = i la resposta apareix com a suggeriment. I amb la fila de números activada, les lletres tornen a mostrar els seus dígits.</string>
+    <string name="apptour62__selection_eyebrow">Seleccionar i moure\'s</string>
+    <string name="apptour62__selection_title">Mira què has seleccionat</string>
+    <string name="apptour62__selection_body">La fila que abans quedava buida durant una selecció ara compta les paraules i els caràcters que conté. Botons nous salten al principi i al final del camp, i en copiar es poden deixar enrere els espais sobrers dels extrems. La fila d\'accions s\'aparta tan bon punt comença una selecció, en comptes de parlar-hi per sobre.</string>
+    <string name="apptour62__clipboard_eyebrow">Porta-retalls</string>
+    <string name="apptour62__clipboard_title">Troba un retall pel que hi diu</string>
+    <string name="apptour62__clipboard_body">El porta-retalls ara es pot cercar, per tot el que hi ha. El que acabes de copiar s\'ofereix a la barra de suggeriments com una píndola que pots descartar, i copiar el mateix text dues vegades compta com dues, així que torna. Esborrar un retall ara també esborra el fitxer que hi ha al darrere, en comptes de deixar la imatge al telèfon.</string>
+    <string name="apptour62__gestures_eyebrow">Gestos</string>
+    <string name="apptour62__gestures_title">Mantén ?123, llisca, deixa anar</string>
+    <string name="apptour62__gestures_body">Mantén premuda la tecla de símbols, llisca fins al caràcter que vols i deixa anar: s\'insereix i les lletres ja hi tornen a ser, sense anar i tornar. Lliscar amunt sobre la barra d\'espai ara arriba a la línia de sobre, no només a la paraula anterior. I la separació entre tecles es pot ajustar dins d\'un marge que es veu de debò.</string>
+    <string name="apptour62__export_eyebrow">Nou: dictats com a fitxers</string>
+    <string name="apptour62__export_title">Cada dictat a una carpeta que triïs</string>
+    <string name="apptour62__export_body">Tria una carpeta una vegada i cada dictat acabat s\'hi escriu també com a fitxer de text pla, just en el moment en què acaba. El que sigui que vigili aquella carpeta — una aplicació de notes, una eina de sincronització, la teva còpia de seguretat — rep els teus textos sense que Dictate n\'hagi d\'aprendre el llenguatge.</string>
+    <string name="apptour62__more_eyebrow">A més</string>
+    <string name="apptour62__more_title">Moltes coses petites</string>
+    <string name="apptour62__more_body">Els suggeriments ara miren les dues paraules anteriors al cursor en totes les llengües, no només en anglès. Es pot fer una còpia de seguretat sense les teves claus API, per poder-la passar amb tranquil·litat. Els models de transcripció propis d\'Azure són accessibles, triar un model per treballar sense connexió ara també canvia al motor local, i cada petició té un termini que s\'ajusta a l\'espera. Els dictats apareixen a l\'historial en el moment en què s\'envien, les importacions diuen en quin pas són i es poden cancel·lar, i el text arriba amb més fiabilitat a les aplicacions que s\'hi resistien.</string>
+    <string name="apptour62__outro_eyebrow">Això és la 6.2</string>
+    <string name="apptour62__outro_title">El mateix teclat, més teu</string>
+    <string name="apptour62__outro_body">No canvia res en la manera com dictes — la teva clau, el teu servidor o un model al dispositiu. Retrobaràs totes les visites a Configuració › Quant a.</string>
+    <string name="apptour63__cta_try">Prova-ho</string>
+    <string name="apptour63__intro_eyebrow">Dictate 6.3</string>
+    <string name="apptour63__intro_title">Més teclat, sense sortir-ne</string>
+    <string name="apptour63__intro_body">Apunta la càmera a un text imprès i arriba al camp. El cursor, la selecció i el porta-retalls per fi comparteixen un tauler. Qualsevol botó de la Smartbar pot dur una segona acció amb una pulsació llarga. I el dictat sense connexió ja té models que caben de debò en un telèfon.</string>
+    <string name="apptour63__scan_eyebrow">Nou: escaneja text</string>
+    <string name="apptour63__scan_title">L\'imprès, directe al camp</string>
+    <string name="apptour63__scan_body">L\'IBAN d\'una carta, el número de sèrie d\'una capsa, l\'adreça d\'un paquet: apunta la càmera i el text arriba on estaves escrivint, en lloc de tornar-lo a teclejar. El reconeixement es fa en aquest dispositiu: no es puja res i no hi intervé cap proveïdor. El Dictate tampoc no demana mai el permís de càmera: la càmera del sistema fa la foto i només torna aquesta imatge, que s\'esborra tan bon punt s\'ha llegit.</string>
+    <string name="apptour63__editing_eyebrow">Nou: tauler d\'edició</string>
+    <string name="apptour63__editing_title">Cursor, selecció i porta-retalls en un sol lloc</string>
+    <string name="apptour63__editing_body">Tot això ja existia, repartit en onze tecles que calia conèixer. Ara és un sol tauler: moure\'s per caràcter, paraula o línia, seleccionar, copiar, enganxar, desfer. Una tecla mantinguda es repeteix en lloc d\'exigir onze tocs. I el teclat numèric ja es pot demanar explícitament, en comptes d\'arribar-hi només amb un gest que ningú no havia assignat.</string>
+    <string name="apptour63__second_eyebrow">Nou: mantén per a una segona acció</string>
+    <string name="apptour63__second_title">Dues accions en un lloc de la Smartbar</string>
+    <string name="apptour63__second_body">Tu mateix aparelles una segona acció amb un botó i la pulsació llarga l\'executa. Només es veuen cinc o sis botons alhora: aquesta és la diferència entre tenir una funció i tenir-hi lloc. Una marca petita al cantó mostra quins botons en duen una.</string>
+    <string name="apptour63__floating_eyebrow">Botó flotant</string>
+    <string name="apptour63__floating_title">Un menú en mantenir-lo, i només on el vulguis</string>
+    <string name="apptour63__floating_body">Mantén premut el botó flotant per obtenir un menú curt; transcriure un fitxer n\'és la primera entrada. També li pots dir en quines aplicacions és benvingut, en lloc que et segueixi a totes. Aturar es queda exactament on hi havia iniciar, i la càpsula s\'obre amb fluïdesa a qualsevol costat de la pantalla.</string>
+    <string name="apptour63__offline_eyebrow">Dictat sense connexió</string>
+    <string name="apptour63__offline_title">Models que caben en un telèfon</string>
+    <string name="apptour63__offline_body">L\'anglès, l\'alemany i el rus ja es poden dictar sense connexió amb models d\'uns centenars de megabytes, i no només amb els de 670 MB. El Dolphin hi afegeix quaranta llengües orientals que el catàleg només responia malament. I la llista s\'ordena pel que la gent baixa realment en lloc de per arquitectura: deu files en comptes de vint-i-quatre, amb els detalls a un toc.</string>
+    <string name="apptour63__more_eyebrow">A més</string>
+    <string name="apptour63__more_title">Moltes coses petites</string>
+    <string name="apptour63__more_body">La teva llista de paraules ara pot arribar com a fitxer, i sortir-ne igual. La barra de gravació dibuixa una forma d\'ona, així es veu quan la veu s\'ha aturat. Un compte de proveïdor pot triar la regió on es queden les seves dades, i l\'amfitrió de streaming l\'acompanya. Un dictat sobreviu que desaparegui el micròfon amb què gravava. La prova de connexió només diu el que ha comprovat de debò, la pàgina de claus del proveïdor és a un toc del camp on va la clau, i una instal·lació nova s\'obre amb allò per a què serveix el teclat i no amb l\'ordre en què van anar apareixent les funcions.</string>
+    <string name="apptour63__outro_eyebrow">Això és la 6.3</string>
+    <string name="apptour63__outro_title">Menys marrades, el mateix teclat</string>
+    <string name="apptour63__outro_body">No canvia res en la manera com dictes — la teva clau, el teu servidor o un model al dispositiu. Retrobaràs totes les visites a Configuració › Quant a.</string>
     <string name="changelog__v5_0_0">• NOU: Escriptura lliscant — llisca per les tecles per escriure paraules senceres, amb diccionaris per idioma que es baixen a demanda. 👆\n• NOU: Suggeriments de paraules i correcció automàtica — els errors es corregeixen sols i la paraula que has escrit queda a un toc. ✨\n• NOU: Transcripció en temps real — mira com les teves paraules apareixen mentre parles, amb OpenAI, Deepgram, Soniox, AssemblyAI i ElevenLabs. ⚡\n• NOU: Tres proveïdors de transcripció més — ElevenLabs Scribe, Deepgram i AssemblyAI. ☁️\n• NOU: Disposició de dictat clàssica — la pantalla de veu sense teclat de Dictate 3 ha tornat, fixada o a un simple lliscament. 🎙️\n• NOU: Biblioteca d’indicacions de la comunitat — explora i comparteix indicacions de reformulació. 📚\n• NOU: Estadístiques de dictat amb fites. 📊\n• NOU: Model sense connexió NVIDIA Parakeet, a més d’un filtre de silenci que omet els enregistraments buits. 📴\n• Més: un botó flotant més estable, control de l’esforç de raonament, resposta hàptica, un nou tema E-Reader i desenes de correccions. 🛠️</string>
     <string name="media__tab__gifs">GIFs</string>
     <string name="prefs__media__gif__title">GIFs</string>
@@ -2070,4 +2285,35 @@
     <string name="sticker__source_threema">Threema</string>
     <string name="sticker__source_signal">Signal</string>
     <string name="sticker__source_stickers_folder">Carpeta d\'adhesius</string>
+    <string name="scan__take_photo">Fes una foto</string>
+    <string name="scan__pick_image">Tria una imatge</string>
+    <string name="scan__retake">Torna-ho a provar</string>
+    <string name="scan__empty_hint">Fotografia un text imprès i toca la part que vulguis.</string>
+    <string name="scan__latin_only">Només alfabet llatí</string>
+    <string name="scan__reading">S\'està llegint la foto…</string>
+    <string name="scan__no_text">No s\'ha trobat cap text a la foto.</string>
+    <string name="scan__failed">No s\'ha pogut llegir la foto.</string>
+    <string name="scan__no_camera">No s\'ha trobat cap aplicació de càmera.</string>
+    <string name="scan__select_all">Selecciona-ho tot</string>
+    <string name="scan__discard">Descarta</string>
+    <string name="scan__approve">Accepta</string>
+
+    <!-- On-device translation (issue #424) -->
+    <string name="settings__translation__title">Traducció</string>
+    <string name="translate__settings_intro">Tradueix directament al telèfon, i res del que escrius no en surt. S\'obre amb «Tradueix» a la barra intel·ligent.</string>
+    <string name="translate__group_installed">Baixats</string>
+    <string name="translate__group_available">Disponibles</string>
+    <string name="translate__english_included">Sempre inclòs</string>
+    <string name="translate__size_installed">{size} al dispositiu</string>
+    <string name="translate__size_download">{download} de baixada · {size} al dispositiu</string>
+    <string name="translate__hint">Escriu per traduir</string>
+    <string name="translate__detect">Detecta l\'idioma</string>
+    <string name="translate__detected">{language} (detectat)</string>
+    <string name="translate__swap">Intercanvia els idiomes</string>
+    <string name="translate__no_languages">Encara no s\'ha baixat cap idioma</string>
+    <string name="translate__get_languages">Baixa idiomes</string>
+    <string name="translate__more_languages">Més idiomes</string>
+    <string name="translate__missing">Cal baixar {language}</string>
+    <string name="translate__failed">La traducció ha fallat</string>
+    <string name="translate__unsupported">La traducció no està disponible en aquest dispositiu</string>
 </resources>

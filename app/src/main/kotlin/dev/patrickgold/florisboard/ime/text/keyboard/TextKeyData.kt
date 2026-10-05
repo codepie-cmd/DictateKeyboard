@@ -122,6 +122,7 @@ data class TextKeyData(
                 CLIPBOARD_CLEAR_FULL_HISTORY,
                 CLIPBOARD_CLEAR_PRIMARY_CLIP,
                 TOGGLE_COMPACT_LAYOUT,
+                SPLIT_LAYOUT,
                 COMPACT_LAYOUT_TO_LEFT,
                 COMPACT_LAYOUT_TO_RIGHT,
                 UNDO,
@@ -135,10 +136,14 @@ data class TextKeyData(
                 IME_UI_MODE_CLIPBOARD,
                 IME_UI_MODE_GIF,
                 IME_UI_MODE_STICKER,
+                IME_UI_MODE_EDITING,
+                IME_UI_MODE_SCAN,
+                TRANSLATE,
                 IME_UI_MODE_DICTATE,
                 DICTATE_LIVE_PROMPT,
                 DICTATE_PROMPTS,
                 DICTATE_REINSERT,
+                DICTATE_SWITCH_PROVIDER,
                 SYSTEM_INPUT_METHOD_PICKER,
                 SYSTEM_PREV_INPUT_METHOD,
                 SYSTEM_NEXT_INPUT_METHOD,
@@ -353,6 +358,12 @@ data class TextKeyData(
             code = KeyCode.TOGGLE_COMPACT_LAYOUT,
             label = "toggle_compact_layout",
         )
+        /** Predefined key data for [KeyCode.SPLIT_LAYOUT], which toggles the split keyboard (issue #362) */
+        val SPLIT_LAYOUT = TextKeyData(
+            type = KeyType.SYSTEM_GUI,
+            code = KeyCode.SPLIT_LAYOUT,
+            label = "split_layout",
+        )
         /** Predefined key data for [KeyCode.COMPACT_LAYOUT_TO_LEFT] */
         val COMPACT_LAYOUT_TO_LEFT = TextKeyData(
             type = KeyType.SYSTEM_GUI,
@@ -446,6 +457,24 @@ data class TextKeyData(
             code = KeyCode.IME_UI_MODE_STICKER,
             label = "ime_ui_mode_sticker",
         )
+        /** Predefined key data for [KeyCode.IME_UI_MODE_EDITING] (opens the text editing panel) */
+        val IME_UI_MODE_EDITING = TextKeyData(
+            type = KeyType.SYSTEM_GUI,
+            code = KeyCode.IME_UI_MODE_EDITING,
+            label = "ime_ui_mode_editing",
+        )
+        /** Predefined key data for [KeyCode.IME_UI_MODE_SCAN] (opens the scan-text panel, issue #390) */
+        val IME_UI_MODE_SCAN = TextKeyData(
+            type = KeyType.SYSTEM_GUI,
+            code = KeyCode.IME_UI_MODE_SCAN,
+            label = "ime_ui_mode_scan",
+        )
+        /** Predefined key data for [KeyCode.TRANSLATE] (opens or closes the translate bar, issue #424) */
+        val TRANSLATE = TextKeyData(
+            type = KeyType.SYSTEM_GUI,
+            code = KeyCode.TRANSLATE,
+            label = "translate",
+        )
         /** Predefined key data for [KeyCode.IME_UI_MODE_DICTATE] (Dictate AI voice panel) */
         val IME_UI_MODE_DICTATE = TextKeyData(
             type = KeyType.SYSTEM_GUI,
@@ -469,6 +498,12 @@ data class TextKeyData(
             type = KeyType.SYSTEM_GUI,
             code = KeyCode.DICTATE_REINSERT,
             label = "dictate_reinsert",
+        )
+        /** Predefined key data for [KeyCode.DICTATE_SWITCH_PROVIDER] (transcription provider picker, #431) */
+        val DICTATE_SWITCH_PROVIDER = TextKeyData(
+            type = KeyType.SYSTEM_GUI,
+            code = KeyCode.DICTATE_SWITCH_PROVIDER,
+            label = "dictate_switch_provider",
         )
 
         /** Predefined key data for [KeyCode.SYSTEM_INPUT_METHOD_PICKER] */

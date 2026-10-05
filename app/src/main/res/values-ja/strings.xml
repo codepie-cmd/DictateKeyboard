@@ -72,6 +72,7 @@
     <string name="quick_action__clipboard_cut__tooltip">クリップボードに切り取り</string>
     <string name="quick_action__clipboard_paste" comment="Please mind the limited available space for the quick action strings">貼り付け</string>
     <string name="quick_action__clipboard_paste__tooltip">クリップボードから貼り付け</string>
+    <string name="quick_action__clipboard_select">選択</string>
     <string name="quick_action__clipboard_select_all" comment="Please mind the limited available space for the quick action strings">すべて選択</string>
     <string name="quick_action__clipboard_select_all__tooltip">すべて選択</string>
     <string name="quick_action__ime_ui_mode_clipboard" comment="Please mind the limited available space for the quick action strings">クリップボード</string>
@@ -96,8 +97,12 @@
     <string name="quick_action__voice_input__tooltip" comment="IME stands for Input Method Editor and is indirectly equivalent to 'keyboard'.">音声入力プロバイダを開く</string>
     <string name="quick_action__one_handed_mode" comment="Please mind the limited available space for the quick action strings">片手モード</string>
     <string name="quick_action__one_handed_mode__tooltip">片手モードの切り替え</string>
+    <string name="quick_action__split_layout" comment="Please mind the limited available space for the quick action strings">分割</string>
+    <string name="quick_action__split_layout__tooltip">分割キーボードの切り替え</string>
     <string name="quick_action__toggle_number_row" comment="Quick action that shows or hides the row of digit keys above the letters. Please mind the limited available space for the quick action strings">数字キー行</string>
     <string name="quick_action__toggle_number_row__tooltip">数字キーの行を表示/非表示</string>
+    <string name="quick_action__view_numeric_advanced" comment="Quick action that replaces the whole keyboard with a number pad (digits, arithmetic signs, brackets). Not to be confused with the number row above. Please mind the limited available space for the quick action strings">数字キーパッド</string>
+    <string name="quick_action__view_numeric_advanced__tooltip">数字キーパッドに切り替え</string>
     <string name="quick_action__drag_marker" comment="This action is only used as a placeholder in the actions editor drag and drop screen and only visible in debug mode">ドラッグマーカー</string>
     <string name="quick_action__drag_marker__tooltip" comment="This action is only used as a placeholder in the actions editor drag and drop screen and only visible in debug mode">Current drag marker position</string>
     <string name="quick_action__noop" comment="Noop=no operation; this action is only used as a placeholder in the actions editor drag and drop screen">操作なし</string>
@@ -130,6 +135,7 @@
     <string name="settings__search__keywords__selection_metrics" comment="NOT SHOWN ANYWHERE — extra search terms that lead to the setting which shows how many words and characters are selected. Translate as the words people in your language would actually type when looking for it, separated by spaces. Do not translate word for word.">文字数 単語数 カウント 統計</string>
     <string name="settings__search__keywords__trim_on_copy" comment="NOT SHOWN ANYWHERE — extra search terms that lead to the setting which removes spaces and line breaks at the ends of copied text. Translate as the words people in your language would actually type when looking for it, separated by spaces. Do not translate word for word.">トリミング 空白 削除 コピー 切り取り</string>
     <string name="settings__search__keywords__clear_cache">キャッシュ ストレージ 空き容量 一時ファイル 削除 クリア 掃除</string>
+    <string name="settings__search__keywords__momentary_layer">長押し スライド 記号 レイヤー 一時 句読点 123 iphone</string>
     <string name="settings__search__keywords__emoji_row">絵文字 行 バー 最近 使った キーボード 上 クイック</string>
     <string name="settings__search__keywords__request_timeout">タイムアウト 時間切れ 遅い 待機 接続 秒</string>
     <string name="settings__localization__title" comment="Title of languages and Layout screen">言語と入力</string>
@@ -177,6 +183,8 @@
     <string name="settings__localization__subtype_delete_confirmation_title" comment="Title of the subtype delete confirmation dialog">削除の確認</string>
     <string name="settings__localization__subtype_delete_confirmation_warning" comment="Warning message in the confirmation dialog to confirm the user's intent to delete">このサブタイプを削除してもよろしいですか？</string>
     <string name="settings__theme__title" comment="Title of the Theme screen">テーマ</string>
+    <string name="pref__theme__high_contrast__label" comment="Label of the switch that turns on the measured high-contrast theme pair">ハイコントラスト</string>
+    <string name="pref__theme__high_contrast__summary" comment="Summary of the high-contrast switch. 7:1 is the WCAG AAA contrast ratio for body text; keep the ratio as digits.">枠線付きのキー、すべての文字を 7:1 で測定。昼と夜のテーマを設定します。</string>
     <string name="pref__theme__mode__label" comment="Label of the theme mode preference">テーマモード</string>
     <string name="pref__theme__sunrise_time__label" comment="Label of the sunrise time preference">日の出時刻</string>
     <string name="pref__theme__sunset_time__label" comment="Label of the sunset time preference">日の入り時刻</string>
@@ -312,10 +320,13 @@
     <string name="snygg__rule_selector__disabled">無効状態</string>
     <string name="snygg__property_name__background">背景</string>
     <string name="snygg__property_name__foreground">前景</string>
+    <string name="snygg__property_name__background_blur">背景のぼかし</string>
     <string name="snygg__property_name__background_image">背景画像</string>
     <string name="snygg__property_name__content_scale">コンテンツスケール</string>
     <string name="snygg__property_name__border_color">枠線の色</string>
     <string name="snygg__property_name__border_style">枠線のスタイル</string>
+    <string name="snygg__property_name__background_sheen">背景の光沢</string>
+    <string name="snygg__property_name__border_sheen">枠線の光沢</string>
     <string name="snygg__property_name__border_width">枠線の幅</string>
     <string name="snygg__property_name__font_family">フォントファミリー</string>
     <string name="snygg__property_name__font_size">フォントサイズ</string>
@@ -364,6 +375,8 @@
     <string name="snygg__property_value__circle_shape">円形</string>
     <string name="snygg__property_value__cut_corner_shape_dp">角丸（切り取り、dp）</string>
     <string name="snygg__property_value__cut_corner_shape_percent">角丸（切り取り、%）</string>
+    <string name="snygg__property_value__sheen">光沢</string>
+    <string name="snygg__property_value__squircle_shape">スーパー楕円</string>
     <string name="snygg__property_value__rounded_corner_shape_dp">角丸（dp）</string>
     <string name="snygg__property_value__rounded_corner_shape_percent">角丸（%）</string>
     <string name="snygg__property_value__dp_size">サイズ（dp）</string>
@@ -416,6 +429,8 @@
     <string name="pref__keyboard__font_size_multiplier__label" comment="Preference title">フォントサイズ倍率</string>
     <string name="pref__keyboard__group_layout__label" comment="Preference group title">レイアウト</string>
     <string name="pref__keyboard__landscape_input_ui_mode__label" comment="Preference value">横向き時のフルスクリーン入力</string>
+    <string name="pref__keyboard__key_spacing__label" comment="Preference title">キーの間隔</string>
+    <string name="pref__keyboard__key_spacing__summary" comment="Preference summary">縦 {v}%、横 {h}% — 間隔を広げるとキーボードではなくキーが小さくなります。</string>
     <string name="pref__keyboard__group_keypress__label" comment="Preference group title">キー入力</string>
     <string name="pref__keyboard__popup_enabled__label" comment="Preference title">キーポップアップの表示</string>
     <string name="pref__keyboard__popup_enabled__summary" comment="Preference summary">キーを押すとポップアップを表示</string>
@@ -438,6 +453,11 @@
     <string name="pref__smartbar__shared_actions_auto_expand_collapse__label" comment="Preference title">自動展開/折りたたみ</string>
     <string name="pref__smartbar__shared_actions_auto_expand_collapse__summary" comment="Preference summary">現在の状態に基づいて共有アクション行を自動的に展開/折りたたみます</string>
     <string name="pref__smartbar__extended_actions_placement__label" comment="Preference title">アクション行の配置</string>
+    <string name="settings__smartbar__second_actions__title" comment="Title of the Smartbar second actions screen">セカンドアクション</string>
+    <string name="settings__smartbar__second_actions__summary" comment="Preference summary">Smartbar のボタンを長押しするとセカンドアクションを実行します</string>
+    <string name="settings__smartbar__second_actions__note" comment="Header of the screen while nothing is being paired: says what to do">ボタンをタップし、次に長押ししたときに実行するアクションをタップします。どちらも自身のボタンを保持したままです。空きを作るには、キーボードのアクションエディターで一方を非表示にしてください。</string>
+    <string name="settings__smartbar__second_actions__hint_pick_second" comment="Header while a button is selected; {action} is that button's name">{action} を長押ししたときに何を実行しますか？</string>
+    <string name="settings__smartbar__second_actions__section_child_only" comment="Heading above the buttons that cannot carry a second action">セカンドアクション専用 — これらのボタンは長押しで繰り返すか、すでに独自の長押し機能があります</string>
     <!-- Typing strings -->
     <string name="settings__typing__title" comment="Title of Typing screen">入力</string>
     <string name="pref__suggestion__title" comment="Preference group title">候補</string>
@@ -452,6 +472,8 @@
     <string name="pref__correction__auto_capitalization__summary" comment="Preference summary">現在の入力コンテキストに基づいて単語を大文字にします</string>
     <string name="pref__correction__auto_space_punctuation__label" comment="Preference title">句読点の後に自動でスペースを挿入</string>
     <string name="pref__correction__auto_space_punctuation__summary" comment="Preference summary">句読点の後に自動的にスペースを挿入します</string>
+    <string name="pref__correction__tighten_punctuation_spacing__label" comment="Preference title">句読点の前のスペースを削除</string>
+    <string name="pref__correction__tighten_punctuation_spacing__summary" comment="Preference summary">「. , ? !」の前に入力したスペースを削除します</string>
     <string name="pref__correction__remember_caps_lock_state__label" comment="Preference title">CapsLockの状態を記憶</string>
     <string name="pref__correction__remember_caps_lock_state__summary" comment="Preference summary">別のテキストフィールドに移動してもCapsLockはオンのまま</string>
     <string name="pref__correction__double_space_period__label" comment="Preference title">スペースキーのダブルタップ</string>
@@ -529,9 +551,12 @@
     <string name="pref__gestures__swipe_left__label" comment="Preference title">左にスワイプ</string>
     <string name="pref__gestures__swipe_right__label" comment="Preference title">右にスワイプ</string>
     <string name="pref__gestures__space_bar_swipe_up__label" comment="Preference title">スペースバーを上にスワイプ</string>
+    <string name="pref__gestures__space_bar_swipe_down__label" comment="Preference title">スペースバーを下にスワイプ</string>
     <string name="pref__gestures__space_bar_swipe_left__label" comment="Preference title">スペースバーを左にスワイプ</string>
     <string name="pref__gestures__space_bar_swipe_right__label" comment="Preference title">スペースバーを右にスワイプ</string>
     <string name="pref__gestures__space_bar_long_press__label" comment="Preference title">スペースバーを長押し</string>
+    <string name="pref__gestures__momentary_layer__label" comment="Preference title, keep short">長押しでレイヤーを一時表示</string>
+    <string name="pref__gestures__momentary_layer__summary" comment="Preference summary, keep short (one line)">\?123 を押したまま文字にスライドして離すと、その文字が入力されて文字キーに戻ります</string>
     <string name="pref__gestures__delete_key_swipe_left__label" comment="Preference title">削除キーを左にスワイプ</string>
     <string name="pref__gestures__delete_key_long_press__label" comment="Preference title">削除キーを長押し</string>
     <string name="pref__gestures__swipe_velocity_threshold__label" comment="Preference title">スワイプ速度の閾値</string>
@@ -645,6 +670,7 @@
     <string name="crash_multiple_notification__title" comment="Title of the notification for consecutive crashes">Dictateが繰り返し動作を停止しているようです…</string>
     <string name="crash_multiple_notification__body" comment="Body of the notification for consecutive crashes">無限クラッシュループを停止するため、以前のキーボードにフォールバックしています。タップしてエラー詳細を表示</string>
     <!-- Clipboard strings -->
+    <string name="editing__back_to_keyboard">キーボードに戻る</string>
     <string name="clipboard__header_title">クリップボード</string>
     <string name="clipboard__search_placeholder" comment="Hint inside the clipboard search field">クリップボードを検索</string>
     <string name="clipboard__search_no_results" comment="Shown when no clip contains what was typed">その語を含む項目はありません</string>
@@ -658,6 +684,7 @@
     <string name="clipboard__group_pinned">ピン留め済み</string>
     <string name="clipboard__group_recent">最近の項目</string>
     <string name="clipboard__group_other">その他</string>
+    <string name="pref__clipboard__history_pinned_on_top__label">ピン留めした項目を上に表示</string>
     <string name="clipboard__item_description_email">メール</string>
     <string name="clipboard__item_description_url">URL</string>
     <string name="clipboard__item_description_phone">電話</string>
@@ -681,6 +708,7 @@
     <string name="pref__clipboard__trim_on_copy__label" comment="Preference title, keep short">コピー時にトリミング</string>
     <string name="pref__clipboard__trim_on_copy__summary" comment="Preference summary, keep short (one line)">前後の空白と改行を取り除きます</string>
     <string name="pref__clipboard__suggestion_enabled__summary" comment="Preference summary">以前にコピーしたクリップボードコンテンツを提案します</string>
+    <string name="pref__clipboard__suggestion_show_extracted__label" comment="Preference title (switch) in the group Clipboard suggestions, keep short (one line): whether the links, email addresses and phone numbers found inside a copied text are also offered as suggestions of their own, next to the whole text">リンク・メール・電話番号</string>
     <string name="pref__clipboard__suggestion_timeout__label" comment="Preference title; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__summary` and is the first part">クリップボード候補を制限する</string>
     <string name="pref__clipboard__suggestion_timeout__summary" comment="Preference summary; Translators: This should form a sentence together with `pref__clipboard__suggestion_timeout__label` and is the second part">過去{v}秒以内にコピーされたアイテム</string>
     <string name="pref__clipboard__group_clipboard_history__label">クリップボード履歴</string>
@@ -1007,6 +1035,7 @@
     <string name="enum__swipe_action__move_cursor_start_of_page" comment="Enum value label">カーソルをページ先頭に移動</string>
     <string name="enum__swipe_action__move_cursor_end_of_page" comment="Enum value label">カーソルをページ末尾に移動</string>
     <string name="enum__swipe_action__switch_to_clipboard_context" comment="Enum value label">クリップボードマネージャー/履歴を開く</string>
+    <string name="enum__swipe_action__switch_to_editing_context">テキスト編集パネルを開く</string>
     <string name="enum__swipe_action__shift" comment="Enum value label">Shift</string>
     <string name="enum__swipe_action__redo" comment="Enum value label">やり直し</string>
     <string name="enum__swipe_action__undo" comment="Enum value label">元に戻す</string>
@@ -1049,6 +1078,12 @@
         <item quantity="other">{v}候補</item>
     </plurals>
     <!-- Dictate strings -->
+    <string name="quick_action__ime_ui_mode_editing">テキスト編集</string>
+    <string name="quick_action__ime_ui_mode_editing__tooltip">カーソル移動、選択、テキスト編集</string>
+    <string name="quick_action__ime_ui_mode_scan">テキストをスキャン</string>
+    <string name="quick_action__ime_ui_mode_scan__tooltip">印刷された文字を撮影して挿入します</string>
+    <string name="quick_action__translate">翻訳</string>
+    <string name="quick_action__translate__tooltip">入力しながらこの端末上で翻訳します</string>
     <string name="quick_action__ime_ui_mode_dictate">音声入力</string>
     <string name="quick_action__ime_ui_mode_dictate__tooltip">タップして音声入力、もう一度タップで文字起こし</string>
     <string name="quick_action__dictate_live_prompt">音声指示</string>
@@ -1125,10 +1160,16 @@
     <string name="dictate__floating_button_disclosure_continue">設定を開く</string>
     <string name="dictate__floating_button_mic_title">マイクへのアクセス</string>
     <string name="dictate__floating_button_mic_summary">音声の録音に必要です · タップして許可</string>
-    <string name="dictate__floating_button_show_with_keyboard_title">Dictate キーボードでも表示</string>
-    <string name="dictate__floating_button_show_with_keyboard_summary_on">Dictate キーボードが有効なときもボタンが表示されます。</string>
-    <string name="dictate__floating_button_show_with_keyboard_summary_off">Dictate キーボードにはマイクキーがあるため、有効なときは非表示になります。</string>
+    <string name="dictate__floating_button_show_when_title">表示するタイミング</string>
+    <string name="dictate__floating_button_show_when_field">テキスト欄を選択したとき</string>
+    <string name="dictate__floating_button_show_when_keyboard">キーボード表示中のみ</string>
+    <string name="dictate__floating_button_show_when_dictate_keyboard">Dictate キーボードでも表示</string>
     <string name="dictate__action_continue_recording">録音を続ける</string>
+    <string name="dictate__a11y_mic_hold_local">端末で文字起こし</string>
+    <string name="smartbar__a11y_show_actions">アクションを表示</string>
+    <string name="smartbar__a11y_show_suggestions">候補を表示</string>
+    <string name="smartbar__a11y_show_more_actions">その他のアクションを表示</string>
+    <string name="smartbar__a11y_hide_more_actions">その他のアクションを非表示</string>
     <string name="dictate__floating_button_auto_dim_summary_off">常に完全に表示されたままです。</string>
     <string name="dictate__floating_button_auto_dim_summary_on">数秒後に小さな点に縮小します。タップで元に戻ります。</string>
     <string name="dictate__floating_button_auto_dim_title">操作がないとき薄くする</string>
@@ -1145,6 +1186,17 @@
     <string name="dictate__floating_button_design_pill_summary">アクティブ時に展開し、タイマーとライブ波形を表示します。</string>
     <string name="dictate__floating_button_design_ring">リング</string>
     <string name="dictate__floating_button_design_ring_summary">録音・文字起こし中にアニメーションするリング付きのコンパクトな円。</string>
+    <string name="dictate__floating_button_apps_title">アプリごとの表示</string>
+    <string name="dictate__floating_button_apps_summary_all">すべてのアプリで表示</string>
+    <string name="dictate__floating_button_apps_summary_only">{n} 個のアプリでのみ表示</string>
+    <string name="dictate__floating_button_apps_summary_except">{n} 個のアプリ以外で表示</string>
+    <string name="dictate__floating_button_apps_scope_all">すべてのアプリ</string>
+    <string name="dictate__floating_button_apps_scope_only">下で選んだアプリのみ</string>
+    <string name="dictate__floating_button_apps_scope_except">下で選んだアプリ以外すべて</string>
+    <string name="dictate__floating_button_apps_note">選ばなかったアプリの上にボタンが描画されることはなく、Dictate がそのアプリのテキスト欄を読むこともありません。ユーザー補助サービス自体を拒むアプリには、サービスが有効であること自体は引き続き分かります。</string>
+    <string name="dictate__floating_button_apps_list_title">アプリ</string>
+    <string name="dictate__floating_button_apps_search">アプリを検索</string>
+    <string name="dictate__floating_button_apps_none">「{search_term}」に一致するアプリはありません</string>
     <string name="dictate__floating_button_design_title">ボタンのスタイル</string>
     <string name="dictate__floating_button_haptic_summary_off">タップ時に振動しません。</string>
     <string name="dictate__floating_button_haptic_summary_on">ボタンをタップすると短く振動します。</string>
@@ -1162,7 +1214,7 @@
     <string name="dictate__floating_button_snap_title">端に吸着</string>
     <string name="dictate__interrupted_recording">中断されました ({time})</string>
     <string name="dictate__providers_summary_both">文字起こし: {transcription} · 言い換え: {rewording}</string>
-    <string name="dictate__remember_last_dictation_summary">最後の音声入力を保持し、Smartbar の「再挿入」ボタンで再び挿入できます。</string>
+    <string name="dictate__remember_last_dictation_summary">直前の音声入力を保持し、フローティングボタンで取り消したり、クラシックレイアウトで再挿入したりできるようにします。</string>
     <string name="dictate__remember_last_dictation_title">最後の音声入力を記憶</string>
     <string name="changelog__v4_2_0">• 新機能: フローティング音声入力ボタン — 別のキーボードが有効でも、どのアプリにも直接音声入力できます。3つのスタイル（ピル、リング、オーブ）から選び、話すとライブ波形が表示され、端に吸着させながらどこへでもドラッグでき、色とサイズを設定し、長押しで言い換えられます。設定 ▸ Dictate ▸ フローティングボタンでオンにできます。\n• 新機能：Google Gemini — 文字起こしと書き換えに自分の AI Studio API キーを使えます。\n• プロンプトがデフォルトでキーの上の常時表示の行に表示されるようになりました。\n• ブラウザーや他のキーボードを含む、アプリ全体でのより確実なテキスト挿入。</string>
     <string name="dictate__promo_floating_button_message">新機能：どのアプリでも音声入力</string>
@@ -1263,15 +1315,45 @@
     <string name="dictate__providers_cap_chat">言い換え</string>
     <string name="dictate__providers_add_custom">自分のサーバーを追加</string>
     <string name="dictate__providers_add_custom_summary">セルフホストまたは OpenAI 互換の任意のエンドポイント — 音声認識と言い換えの両方に</string>
+    <string name="dictate__providers_add">プロバイダーを追加</string>
+    <string name="dictate__providers_search">プロバイダーを検索</string>
+    <string name="dictate__providers_filter_eu">EU</string>
+    <string name="dictate__providers_add_none">一致するプロバイダーがありません</string>
     <string name="dictate__providers_azure_endpoint">エンドポイントはポータルの「Keys and Endpoint」ページでキーの隣にあります。MAI-Transcribe が動くのは East US、West US、West US 2、North Europe、Southeast Asia、Central India だけです。</string>
     <string name="dictate__providers_ollama_no_stt">Ollama には音声認識のエンドポイントがないため、言い換えしかできません。自分のサーバーで音声入力するには、音声サーバー（Speaches、faster-whisper-server、whisper.cpp など）を動かし、「自分のサーバーを追加」から登録してください。サーバーが一切不要な端末上の認識を使うこともできます。</string>
+    <string name="dictate__providers_region_title">リージョン</string>
+    <string name="dictate__providers_region_us">アメリカ合衆国</string>
+    <string name="dictate__providers_region_eu">欧州連合</string>
+    <string name="dictate__providers_region_jp">日本</string>
+    <string name="dictate__providers_region_in">インド</string>
+    <string name="dictate__providers_region_global">全世界</string>
     <string name="dictate__providers_custom_title">カスタムサーバー</string>
+    <string name="dictate__providers_get_key">APIキーを取得</string>
     <string name="dictate__providers_field_name">名前</string>
     <string name="dictate__providers_field_transcription_model">文字起こしモデル</string>
     <string name="dictate__providers_field_chat_model">言い換えモデル</string>
     <string name="dictate__providers_test">接続をテスト</string>
-    <string name="dictate__providers_test_success">接続済み · {count}モデル</string>
-    <string name="dictate__providers_test_failed">接続に失敗しました</string>
+    <string name="dictate__providers_test_transcribe">文字起こしをテスト</string>
+    <string name="dictate__providers_check_no_key">先にAPIキーを入力してください。</string>
+    <string name="dictate__providers_check_credentials_ok">認証情報を確認 · {count} 個のモデル</string>
+    <string name="dictate__providers_check_credentials_ok_nocount">認証情報を確認</string>
+    <string name="dictate__providers_check_endpoint_ok">サーバーに到達 · {count} 個のモデル</string>
+    <string name="dictate__providers_check_credentials_untested">文字起こしは未テストです。</string>
+    <string name="dictate__providers_check_transcription_ok">文字起こしを確認</string>
+    <string name="dictate__providers_check_transcription_text">返ってきた内容：「{text}」</string>
+    <string name="dictate__providers_check_transcription_empty">リクエストは通りましたが、テキストが返りませんでした。接続はできていますが、このモデルはサンプルを理解できませんでした。</string>
+    <string name="dictate__providers_check_failed_connection">接続テストに失敗しました</string>
+    <string name="dictate__providers_check_failed_transcription">文字起こしテストに失敗しました</string>
+    <string name="dictate__providers_check_err_auth">キーが拒否されました。キーと、アドレスが同じアカウントのものかを確認してください。</string>
+    <string name="dictate__providers_check_err_quota">キーは有効ですが、アカウントの残量がないか上限を超えています。プロバイダーでプランを確認してください。</string>
+    <string name="dictate__providers_check_err_network">サーバーに接続できませんでした。アドレスとインターネット接続を確認してください。</string>
+    <string name="dictate__providers_check_err_timeout">時間内に応答がありませんでした。プロバイダーが混雑している可能性があります。もう一度お試しください。</string>
+    <string name="dictate__providers_check_err_server">プロバイダー側のエラーです。ここで変更できることはありません。しばらくしてからお試しください。</string>
+    <string name="dictate__providers_check_err_format">プロバイダーがサンプル音声を拒否しました。この形式に対応していない可能性があります。</string>
+    <string name="dictate__providers_check_err_unknown">リクエストが失敗しました。</string>
+    <string name="dictate__providers_azure_link_signup">Azureアカウントを作成</string>
+    <string name="dictate__providers_azure_link_portal">Azureポータル</string>
+    <string name="dictate__providers_azure_link_guide">セットアップガイド</string>
     <string name="dictate__providers_network_group">ネットワーク</string>
     <string name="dictate__request_timeout_title">リクエストのタイムアウト</string>
     <string name="dictate__request_timeout_summary">{v} 秒 · 自分のサーバーが遅い場合は長くしてください</string>
@@ -1312,8 +1394,10 @@
     <string name="dictate__recording_animation_static_description">録音中は赤い点のまま変化しません</string>
     <string name="dictate__recording_animation_pulse_label">点滅</string>
     <string name="dictate__recording_animation_pulse_description">一定のリズムで脈打ちます</string>
-    <string name="dictate__recording_animation_level_label">声に反応</string>
+    <string name="dictate__recording_animation_level_label">声に反応（ドット）</string>
     <string name="dictate__recording_animation_level_description">マイクの音量に反応し、音を拾っていることを示します</string>
+    <string name="dictate__recording_animation_wave_label">声に反応（波形）</string>
+    <string name="dictate__recording_animation_wave_description">直近の数秒を波形で表示するので、話し終えたタイミングが一目で分かります</string>
     <string name="dictate__skip_silent_title">無音の録音をスキップ</string>
     <string name="dictate__skip_silent_summary">無音の録音での幻覚テキストや無駄なAPI呼び出しを回避します</string>
     <string name="dictate__trim_silent_gaps_title">長い無音を除去</string>
@@ -1377,7 +1461,13 @@
     <string name="dictate__languages_title">文字起こし言語</string>
     <string name="dictate__languages_summary">音声入力する言語を選択します。録音バーから素早く切り替えられます。</string>
     <string name="dictate__language_detect">自動検出</string>
+    <string name="dictate__languages_selected_title">選択した言語</string>
     <string name="dictate__languages_active_title">使用中の言語</string>
+    <string name="dictate__languages_follow_keyboard">キーボードの言語に合わせる</string>
+    <string name="dictate__languages_follow_keyboard_summary">選択した言語なら、音声入力も切り替わります</string>
+    <string name="quick_action__dictate_switch_provider">文字起こしプロバイダー</string>
+    <string name="quick_action__dictate_switch_provider__tooltip">文字起こしプロバイダーを切り替え</string>
+    <string name="enum__space_bar_mode__transcription_provider">文字起こしプロバイダー</string>
     <string name="dictate__prompt_selection_none">なし</string>
     <string name="dictate__prompt_selection_predefined">既定</string>
     <string name="dictate__prompt_selection_custom">カスタム</string>
@@ -1390,6 +1480,26 @@
     <string name="dictate__custom_words_title">カスタム単語</string>
     <string name="dictate__custom_words_summary_empty">正しく表記するために名前や専門用語を追加します</string>
     <string name="dictate__custom_words_placeholder">例: FlorisBoard、Kubernetes、Renée、OAuth、Anthropic</string>
+    <string name="dictate__custom_words_summary">{count} 語 · 約 {tokens} / {budget} トークン</string>
+    <string name="dictate__custom_words_budget_info">ここの単語は口述のたびに毎回送られますが、音声モデルが読むのは約 {budget} トークン分の文脈だけです。このリストはそのうち約 {tokens} を使っています。</string>
+    <string name="dictate__custom_words_budget_over">リストが音声モデルの読み取れる長さを超えています。{count} 語のうち約 {fits} 語だけが届き、残りは毎回送られたうえで無視されます。語彙が多い場合はカスタム置換をお使いください。正確で、オフラインでも動き、費用もかかりません。</string>
+    <string name="dictate__custom_words_import">単語リストを読み込む</string>
+    <string name="dictate__custom_words_export">単語リストを書き出す</string>
+    <string name="dictate__custom_words_export_filename">dictate_words.txt</string>
+    <string name="dictate__custom_words_import_title">単語リストを読み込む</string>
+    <string name="dictate__custom_words_import_fitting">このファイルの新しい単語 {count} 語がリストに収まります。</string>
+    <string name="dictate__custom_words_import_known">{count} 語はすでに登録されていました。</string>
+    <string name="dictate__custom_words_import_nofit">{count} 語は入りませんでした。音声モデルが読む文脈は約 {budget} トークンまでなので、送られても無視されていたはずです。</string>
+    <string name="dictate__custom_words_import_unusable">{count} 行には表記すべき語がなく、読み飛ばしました。</string>
+    <string name="dictate__custom_words_import_truncated">ファイルの先頭 {count} 件のみを読み込みました。</string>
+    <string name="dictate__custom_words_import_also_dictionary">ユーザー辞書にも追加する</string>
+    <string name="dictate__custom_words_import_also_dictionary_summary">このリストは音声モデルに綴りを伝えるだけのものです。ユーザー辞書は入力中にキーボードが使う辞書で、長さの制限がありません。そのため上に収まらなかった語も含め、ファイル内のすべての単語が登録されます。</string>
+    <string name="dictate__custom_words_import_empty">このファイルに単語は見つかりませんでした</string>
+    <string name="dictate__custom_words_import_done">{count} 語を追加しました</string>
+    <string name="dictate__custom_words_import_done_dictionary">{count} 語を追加し、{dict} 語をユーザー辞書にも追加しました</string>
+    <string name="dictate__file_unreadable">このファイルは読み込めませんでした</string>
+    <string name="dictate__file_export_done">ファイルを保存しました</string>
+    <string name="dictate__file_export_failed">このファイルを書き込めませんでした</string>
     <string name="dictate__rewording_group">言い換え（AI編集）</string>
     <string name="dictate__rewording_title">言い換え（AI）</string>
     <string name="dictate__rewording_summary_on">オン – AIで言い換え・翻訳・書式設定</string>
@@ -1404,6 +1514,12 @@
     <string name="dictate__manage_prompts_title">プロンプトを管理</string>
     <string name="dictate__manage_prompts_summary">{count}個のプロンプト</string>
     <string name="dictate__manage_prompts_summary_loading">プロンプトの追加・編集・削除</string>
+    <string name="dictate__command_word_title">コマンドワード</string>
+    <string name="dictate__command_word_off">オフ</string>
+    <string name="dictate__command_word_summary">「{word}」で始まる音声入力は音声指示として実行されます</string>
+    <string name="dictate__command_word_placeholder">ジャービス</string>
+    <string name="dictate__command_word_info_title">コマンドワードについて</string>
+    <string name="dictate__command_word_info_description">Dictate は通常、話した内容をそのまま書き取ります。コマンドワードを設定すると、その語で始まる音声入力は指示として扱われます。語は取り除かれ、残りが（選択中のテキストがあればそれと一緒に）AI へ送られます。\n\n「ジャービス、もっと丁寧にして」は選択範囲を書き換えます。「ジャービス、日本の首都はどこ」は答えを入力欄に書き込みます。つまり、タップする代わりに名前を呼んで使う音声指示ボタンです。\n\nこの語は音声入力のいちばん最初にあるときだけ、しかも単独の語としてのみ有効です。文の書き出しにめったに使わない語を選んでください。</string>
     <string name="dictate__auto_formatting_title">自動書式設定</string>
     <string name="dictate__auto_formatting_summary">話した書式の指示をMarkdown（見出し、リストなど）に変換します</string>
     <string name="dictate__system_prompt_title">言い換えの指示</string>
@@ -1548,6 +1664,11 @@
     <string name="dictate__local_model_none_selected">まだモデルがダウンロードされていません</string>
     <string name="dictate__local_model_delete_confirm">「{model}」を削除しますか？後でもう一度ダウンロードできます。</string>
     <string name="dictate__local_model_not_installed_error">端末内モデルがありません</string>
+    <string name="dictate__local_model_family_installed">{total} 件中 {count} 件インストール済み</string>
+    <string name="dictate__local_model_family_open">バリエーションを表示</string>
+    <plurals name="dictate__local_model_languages">
+        <item quantity="other">{count}言語</item>
+    </plurals>
     <string name="dictate__local_fallback_title">オフライン時のフォールバック</string>
     <string name="dictate__local_fallback_summary">オフライン時、プロバイダーが失敗したらダウンロード済みモデルで端末上で文字起こしします</string>
     <string name="backup_and_restore__back_up__files_dictate_prompts">保存された言い換えプロンプト</string>
@@ -1555,6 +1676,8 @@
     <string name="dictate__floating_button_copy_to_clipboard_title">口述をすべてクリップボードにコピー</string>
     <string name="dictate__floating_button_copy_to_clipboard_summary_on">各口述はクリップボードにもコピーされ、挿入が失敗しても手動で貼り付けられます。一部の端末ではクリップボードの通知が表示される場合があります。</string>
     <string name="dictate__floating_button_copy_to_clipboard_summary_off">口述は挿入されるだけで、クリップボードにはコピーされません。</string>
+    <string name="dictate__floating_button_menu_group">長押しメニュー</string>
+    <string name="dictate__floating_button_menu_settings_title">Dictate の設定</string>
     <string name="dictate__floating_button_undo_summary_off">元に戻すボタンを表示しません。</string>
     <string name="dictate__floating_button_undo_summary_on">音声入力後、ボタンの横に元に戻すボタンが表示され、ワンタップで挿入したテキストを削除できます。</string>
     <string name="dictate__floating_button_undo_title">元に戻すボタン</string>
@@ -1569,6 +1692,16 @@
     <string name="dictate__mappings_field_to_placeholder">例: GitHub</string>
     <string name="dictate__mappings_group">置換ルール</string>
     <string name="dictate__mappings_matchcase_summary">大文字と小文字が完全に一致する場合のみ置き換えます。</string>
+    <string name="dictate__mappings_import">ルールを読み込む</string>
+    <string name="dictate__mappings_export">ルールを書き出す</string>
+    <string name="dictate__mappings_export_filename">dictate_mappings.tsv</string>
+    <string name="dictate__mappings_import_title">ルールを読み込む</string>
+    <string name="dictate__mappings_import_message">このファイルに新しいルールが {count} 件あります。リストに追加しますか？</string>
+    <string name="dictate__mappings_import_known">{count} 件はすでに登録されていました。</string>
+    <string name="dictate__mappings_import_unusable">{count} 行は置換先が書かれておらず、読み飛ばしました。</string>
+    <string name="dictate__mappings_import_format">1行に1ルール：聞こえた語、タブ、置き換える語。</string>
+    <string name="dictate__mappings_import_empty">このファイルにルールは見つかりませんでした</string>
+    <string name="dictate__mappings_import_done">{count} 件のルールを追加しました</string>
     <string name="dictate__mappings_matchcase_title">大文字と小文字を区別</string>
     <string name="dictate__mappings_opt_caseinsensitive">大文字と小文字を無視</string>
     <string name="dictate__mappings_opt_casesensitive">大文字と小文字を区別</string>
@@ -1641,6 +1774,26 @@
     <string name="dictate__history_clear_title">履歴を消去しますか？</string>
     <string name="dictate__history_clear_message">これにより、すべての履歴エントリと保存された音声が完全に削除されます。</string>
     <string name="dictate__history_clear_confirm">すべて消去</string>
+    <string name="dictate__history_export_title">フォルダーへエクスポート</string>
+    <string name="dictate__history_export_summary">新しい音声入力は、完了と同時にこのフォルダーへプレーンテキストとしても書き出されます。</string>
+    <string name="dictate__history_export_folder">フォルダー</string>
+    <string name="dictate__history_export_folder_unset">未設定</string>
+    <string name="dictate__history_export_folder_unavailable">フォルダーを利用できません — もう一度選んでください</string>
+    <string name="dictate__history_export_choose">フォルダーを選択</string>
+    <string name="dictate__history_export_change">変更</string>
+    <string name="dictate__history_export_disconnect">接続を解除</string>
+    <string name="dictate__history_export_audio_title">録音も書き出す</string>
+    <string name="dictate__history_export_audio_summary">文字起こしの隣に音声を保存します。</string>
+    <string name="dictate__history_export_audio_needs_retention">「音声を保持」をオンにしてください。</string>
+    <string name="dictate__history_export_all">すべて今すぐ書き出す</string>
+    <string name="dictate__history_export_all_summary">まだフォルダーにない音声入力をすべて書き出します。フォルダーを選ぶ前のものや、フォルダーに接続できず書き出せなかったものが対象です。</string>
+    <string name="dictate__history_export_all_result">{written} 件を書き出し、{skipped} 件は既存、{failed} 件が失敗</string>
+    <string name="dictate__history_export_last_failure">{when}に書き出しが失敗しました。「すべて今すぐ書き出す」で不足分を補えます。</string>
+    <string name="dictate__history_export_warning_title">そこに入るもの</string>
+    <string name="dictate__history_export_warning_message">このフォルダーには、これ以降のすべての音声入力の文字が保存されます。設定すれば録音も保存されます。クラウドクライアント、バックアップツール、他のアプリなど、このフォルダーを同期するものはすべて、その文字起こしを端末の外へ持ち出します。\n\n接続を解除するまで Dictate は書き出しを続け、フォルダーから削除することはありません。履歴から消えた項目もフォルダーには残ります。パスワード欄とシークレット入力は記録されないため、書き出されることもありません。</string>
+    <string name="dictate__history_export_needs_history">フォルダーへの書き出しは履歴に記録された内容を書き出すため、履歴をオンにする必要があります。</string>
+    <string name="dictate__history_export_enable_history">履歴をオンにする</string>
+    <string name="dictate__history_export_pick_failed">そのフォルダーへの書き込み権限を取得できませんでした</string>
     <string name="dictate__stats_empty">まだ音声入力がありません — 入力を始めると統計がここに表示されます。</string>
     <string name="dictate__stats_time_saved">節約した時間</string>
     <string name="dictate__stats_time_saved_sub">タイピングと比較</string>
@@ -1921,6 +2074,72 @@
     <string name="apptour61__outro_eyebrow">以上が 6.1 です</string>
     <string name="apptour61__outro_title">同じキーボード、角の取れた使い心地</string>
     <string name="apptour61__outro_body">これまでの口述のやり方は何も変わりません。自分の鍵でも、自分のサーバーでも、端末上のモデルでも同じです。すべてのツアーは 設定 › このアプリについて から読み直せます。</string>
+    <string name="apptour62__cta_try">試してみる</string>
+    <string name="apptour62__cta_manage">オフにする場所</string>
+    <string name="apptour62__art_word">ゾーヤ</string>
+    <string name="apptour62__art_emoji_word">ケーキ</string>
+    <string name="apptour62__art_emoji">🍰</string>
+    <string name="apptour62__intro_eyebrow">Dictate 6.2</string>
+    <string name="apptour62__intro_title">あなたの言葉を覚え、5つの新しい装いに</string>
+    <string name="apptour62__intro_body">どの辞書も知らない語をキーボードが覚えられるようになり、キーの向こうにアプリを透かせるようになり、左右の親指がそれぞれの半分を持てるようになりました。さらに、毎日の作業を助ける小さな機能をいくつか。</string>
+    <string name="apptour62__learning_eyebrow">新機能: 入力しながら覚える</string>
+    <string name="apptour62__learning_title">どの辞書も知らない言葉</string>
+    <string name="apptour62__learning_body">名前や専門用語を何度か入力すると、キーボードがそれを覚え、誤りとして印を付けるのをやめて候補に出すようになります。この更新で、以前オフにしていた方も含め、全員で有効になります。シークレットモード、パスワード欄、キーを一つずつ打っていないものからは何も覚えません。すべてこの端末の中だけに残り、下のボタンから一覧と切り替えスイッチを開けます。</string>
+    <string name="apptour62__themes_eyebrow">5つの新しいテーマ</string>
+    <string name="apptour62__themes_title">Glass、Sand、Deep、そして暗い E-Ink</string>
+    <string name="apptour62__themes_body">Dictate Glass はキーとキーのすき間からアプリを透かせつつ、キー自体は文字が読める程度の不透明さを保ちます。Glass Clear はさらに透かし、見た目は上ですが、キーボードの背後まで描くアプリではその文字が透けてしまいます。Sand は暖かい明るいテーマ、Deep は落ち着いた暗いテーマ、そして E-Ink にようやく夜版ができました。自動切り替えが暗くなってから白いキーボードを出すことはもうありません。</string>
+    <string name="apptour62__split_eyebrow">新機能: 分割キーボード</string>
+    <string name="apptour62__split_title">手を伸ばさずに、両方の親指で</string>
+    <string name="apptour62__split_body">片手モードやフローティングの隣に加わった新しいクイック操作が、各行を左右に引き離し、それぞれの親指が自分の側だけで済むようにします。QWERTY だけでなくすべての配列が分割されます。継ぎ目はキーの幅から計算されるので、配列ごとに書き込む必要がないからです。横向きでは、両方に余裕があるかぎりアプリが見えたままになります。</string>
+    <string name="apptour62__emoji_eyebrow">絵文字</string>
+    <string name="apptour62__emoji_title">言葉が自分の絵文字を見つける</string>
+    <string name="apptour62__emoji_body">単語を入力すると、その意味の絵文字が候補バーに現れます。システム自身が使うのと同じデータから、約50の言語で。候補の席を奪うのではなく、その隣に並びます。さらに、ピン留めした絵文字と最近使った絵文字を並べる任意の行もキーの上に追加できます。</string>
+    <string name="apptour62__helpers_eyebrow">4つの小さな助け</string>
+    <string name="apptour62__helpers_title">シークレット、きれいなリンク、計算の答え</string>
+    <string name="apptour62__helpers_body">シークレットモードの間は何も覚えません。学習もせず、記録も残しません。貼り付けたリンクからは、入力欄に入る前に追跡用パラメータを取り除けます。= で終わる式を入力すると、答えが候補として出ます。数字行をオンにすると、文字キーがまた自分の数字を表示します。</string>
+    <string name="apptour62__selection_eyebrow">選択と移動</string>
+    <string name="apptour62__selection_title">どれだけ選んだかが見える</string>
+    <string name="apptour62__selection_body">選択中に空いていた行が、選択範囲の単語数と文字数を数えるようになりました。新しいボタンで入力欄の先頭と末尾へ一気に移動でき、コピーのときには両端の余分な空白を置いていけます。選択が始まると操作行は割り込まずに脇へ下がります。</string>
+    <string name="apptour62__clipboard_eyebrow">クリップボード</string>
+    <string name="apptour62__clipboard_title">中身から目当ての一片を探す</string>
+    <string name="apptour62__clipboard_body">クリップボードを、入っているもの全体から検索できるようになりました。いまコピーしたものは候補バーにピル型で提示され、不要なら払いのけられます。同じ文字列を二度コピーすれば二度と数えるので、また戻ってきます。項目を削除すると、背後のファイルも削除されるようになり、画像が端末に残ることはありません。</string>
+    <string name="apptour62__gestures_eyebrow">ジェスチャー</string>
+    <string name="apptour62__gestures_title">\?123 を押したまま、滑らせて、離す</string>
+    <string name="apptour62__gestures_body">記号キーを押したまま目当ての文字へ滑らせて離すと、その文字が入り、文字キーはもう戻っています。行き来の切り替えは要りません。スペースキーの上方向のスワイプは、直前の単語ではなく一つ上の行に届くようになりました。キーどうしの間隔も、違いがはっきり見える幅で調節できます。</string>
+    <string name="apptour62__export_eyebrow">新機能: 口述をファイルに</string>
+    <string name="apptour62__export_title">すべての口述を、選んだフォルダーへ</string>
+    <string name="apptour62__export_body">フォルダーを一度選んでおけば、終わった口述はその瞬間に、プレーンテキストのファイルとしてそこにも書き出されます。そのフォルダーを見ているもの——メモアプリ、同期ツール、バックアップ——が、Dictate がその言葉を覚えなくてもあなたの文章を受け取れます。</string>
+    <string name="apptour62__more_eyebrow">さらに</string>
+    <string name="apptour62__more_title">細かな改善がたくさん</string>
+    <string name="apptour62__more_body">候補は英語だけでなくどの言語でも、カーソルの前の2語を見るようになりました。バックアップは API キーを含めずに作れるので、そのまま渡せます。Azure 自身の文字起こしモデルに届くようになり、オフライン用のモデルを選ぶとオフラインエンジンにも切り替わり、どの要求にも待ち時間に見合った制限時間が付きました。口述は送信した時点で履歴に現れ、取り込みは今どの段階かを示し、途中で中止できます。これまで扱いにくかったアプリにも、文字がより確実に届きます。</string>
+    <string name="apptour62__outro_eyebrow">これが 6.2 です</string>
+    <string name="apptour62__outro_title">同じキーボード、より自分のものに</string>
+    <string name="apptour62__outro_body">口述のやり方は何も変わりません。自分の鍵でも、自分のサーバーでも、端末上のモデルでも同じです。すべてのツアーは 設定 › このアプリについて から読み直せます。</string>
+    <string name="apptour63__cta_try">試してみる</string>
+    <string name="apptour63__intro_eyebrow">Dictate 6.3</string>
+    <string name="apptour63__intro_title">キーボードから出ずに、できることを増やす</string>
+    <string name="apptour63__intro_body">印刷された文字にカメラを向ければ、そのまま入力欄に入ります。カーソル・選択・クリップボードは、ようやくひとつのパネルにまとまりました。スマートバーのどのボタンも、長押しで二つ目の操作を持てます。オフライン音声入力にも、本当にスマートフォンに収まるモデルが揃いました。</string>
+    <string name="apptour63__scan_eyebrow">新機能: テキストをスキャン</string>
+    <string name="apptour63__scan_title">印刷された文字を、そのまま入力欄へ</string>
+    <string name="apptour63__scan_body">手紙の口座番号、箱のシリアル番号、荷物の住所。カメラを向けるだけで、打ち直すことなく、入力していた場所に文字が届きます。認識はこの端末の中で行われ、どこにもアップロードされず、どの提供元も関わりません。カメラの権限を求めることもありません。写真を撮るのは端末標準のカメラで、返ってくるのはその一枚だけ。読み取られた時点で削除されます。</string>
+    <string name="apptour63__editing_eyebrow">新機能: 編集パネル</string>
+    <string name="apptour63__editing_title">カーソル・選択・クリップボードをひとつの場所に</string>
+    <string name="apptour63__editing_body">どれも以前からありました。ただし、知っていなければ使えない十一個のキーに散らばっていたのです。いまはひとつのパネルです。文字・単語・行の単位で移動し、選択し、コピーし、貼り付け、取り消す。キーを押したままにすれば繰り返され、十一回叩く必要はありません。テンキーも、誰も割り当てていないジェスチャーで偶然たどり着くのではなく、名指しで呼び出せるようになりました。</string>
+    <string name="apptour63__second_eyebrow">新機能: 長押しで二つ目の操作</string>
+    <string name="apptour63__second_title">スマートバーの一枠に二つの操作</string>
+    <string name="apptour63__second_body">二つ目の操作は自分でボタンに組み合わせ、長押しで実行します。同時に見えるボタンは五つか六つだけ。機能が「ある」ことと、その機能の「置き場所がある」ことの違いはここにあります。角の小さな印が、どのボタンが二つ目を持っているかを示します。</string>
+    <string name="apptour63__floating_eyebrow">フローティングボタン</string>
+    <string name="apptour63__floating_title">長押しでメニュー、しかも望む場所だけに</string>
+    <string name="apptour63__floating_body">フローティングボタンを長押しすると短いメニューが開きます。最初の項目はファイルの文字起こしです。どのアプリで歓迎されるかを指定できるようにもなったので、どこへでも付いてくることはありません。停止は開始があったちょうどその位置にとどまり、ピルは画面のどちら側にあっても滑らかに開きます。</string>
+    <string name="apptour63__offline_eyebrow">オフライン音声入力</string>
+    <string name="apptour63__offline_title">スマートフォンに収まるモデル</string>
+    <string name="apptour63__offline_body">英語・ドイツ語・ロシア語は、670 MB のものだけでなく、数百メガバイト台のモデルでもオフラインで音声入力できるようになりました。Dolphin が、これまでうまく答えられなかった東方の四十言語を加えます。一覧は構成ではなく、実際に多くの人がダウンロードするものの順に並び、二十四行から十行になりました。詳細はタップひとつ先です。</string>
+    <string name="apptour63__more_eyebrow">さらに</string>
+    <string name="apptour63__more_title">細かなことがたくさん</string>
+    <string name="apptour63__more_body">自分の単語リストをファイルとして読み込み、ファイルとして書き出せるようになりました。録音バーは波形を描くので、声が止まった時点が目で分かります。提供元のアカウントごとに、データが留まる地域を選べるようになり、ストリーミングの接続先も一緒に移ります。録音中のマイクがなくなっても、音声入力は続きます。接続テストは本当に確認したことだけを述べ、提供元の鍵ページは鍵を入れる欄からタップひとつの距離にあり、新規インストールは機能が世に出た順番ではなく、このキーボードが何のためにあるのかから始まります。</string>
+    <string name="apptour63__outro_eyebrow">これが 6.3 です</string>
+    <string name="apptour63__outro_title">遠回りは減り、キーボードはそのまま</string>
+    <string name="apptour63__outro_body">口述のやり方は何も変わりません。自分の鍵でも、自分のサーバーでも、端末上のモデルでも同じです。すべてのツアーは 設定 › このアプリについて から読み直せます。</string>
     <string name="changelog__v5_0_0">• 新機能: グライド入力 — キーの上をスワイプして単語をまるごと入力。必要に応じてダウンロードされる言語別辞書付き。 👆\n• 新機能: 単語候補と自動修正 — 入力ミスは自動的に直り、入力した単語はワンタップで戻せます。 ✨\n• 新機能: リアルタイム文字起こし — 話しながら単語が現れる様子を確認。OpenAI、Deepgram、Soniox、AssemblyAI、ElevenLabsに対応。 ⚡\n• 新機能: さらに3つの文字起こしプロバイダー — ElevenLabs Scribe、Deepgram、AssemblyAI。 ☁️\n• 新機能: クラシック音声入力レイアウト — Dictate 3のキーボードなし音声画面が復活。固定またはスワイプ一つで。 🎙️\n• 新機能: コミュニティのプロンプトライブラリ — 言い換えプロンプトを閲覧・共有。 📚\n• 新機能: マイルストーン付きの音声入力統計。 📊\n• 新機能: オフラインモデルNVIDIA Parakeet、加えて空の録音をスキップする無音フィルター。 📴\n• その他: より安定したフローティングボタン、推論の強度の調整、触覚フィードバック、新しいE-Readerテーマ、そして数十件の修正。 🛠️</string>
     <string name="media__tab__gifs">GIF</string>
     <string name="prefs__media__gif__title">GIF</string>
@@ -2127,4 +2346,35 @@
     <string name="sticker__source_threema">Threema</string>
     <string name="sticker__source_signal">Signal</string>
     <string name="sticker__source_stickers_folder">ステッカーのフォルダ</string>
+    <string name="scan__take_photo">写真を撮る</string>
+    <string name="scan__pick_image">画像を選ぶ</string>
+    <string name="scan__retake">もう一度試す</string>
+    <string name="scan__empty_hint">印刷された文字を撮影し、必要な部分をタップしてください。</string>
+    <string name="scan__latin_only">ラテン文字のみ</string>
+    <string name="scan__reading">写真を読み取っています…</string>
+    <string name="scan__no_text">写真から文字が見つかりませんでした。</string>
+    <string name="scan__failed">写真を読み取れませんでした。</string>
+    <string name="scan__no_camera">カメラアプリが見つかりません。</string>
+    <string name="scan__select_all">すべて選択</string>
+    <string name="scan__discard">破棄</string>
+    <string name="scan__approve">確定</string>
+
+    <!-- On-device translation (issue #424) -->
+    <string name="settings__translation__title">翻訳</string>
+    <string name="translate__settings_intro">端末上で直接翻訳するため、入力した内容が外部に送られることはありません。スマートバーの「翻訳」から開けます。</string>
+    <string name="translate__group_installed">ダウンロード済み</string>
+    <string name="translate__group_available">ダウンロード可能</string>
+    <string name="translate__english_included">常に利用可能</string>
+    <string name="translate__size_installed">端末内: {size}</string>
+    <string name="translate__size_download">ダウンロード: {download} · 端末内: {size}</string>
+    <string name="translate__hint">入力して翻訳</string>
+    <string name="translate__detect">言語を検出</string>
+    <string name="translate__detected">{language}（検出）</string>
+    <string name="translate__swap">言語を入れ替え</string>
+    <string name="translate__no_languages">まだ言語がダウンロードされていません</string>
+    <string name="translate__get_languages">言語をダウンロード</string>
+    <string name="translate__more_languages">その他の言語</string>
+    <string name="translate__missing">{language}はダウンロードされていません</string>
+    <string name="translate__failed">翻訳に失敗しました</string>
+    <string name="translate__unsupported">この端末では翻訳を利用できません</string>
 </resources>

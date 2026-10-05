@@ -40,6 +40,8 @@ import androidx.annotation.RequiresApi
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.unit.DpRect
+import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import android.view.WindowManager
 import androidx.lifecycle.lifecycleScope
@@ -54,9 +56,11 @@ import dev.patrickgold.florisboard.ime.input.InputFeedbackController
 import dev.patrickgold.florisboard.ime.keyboard.isFullscreenInputRequired
 import dev.patrickgold.florisboard.ime.landscapeinput.ExtractedInputRootView
 import dev.patrickgold.florisboard.ime.landscapeinput.LandscapeInputUiMode
+import dev.patrickgold.florisboard.ime.landscapeinput.showsFullscreenInput
 import dev.patrickgold.florisboard.ime.lifecycle.LifecycleInputMethodService
 import dev.patrickgold.florisboard.ime.nlp.NlpInlineAutofill
 import dev.patrickgold.florisboard.ime.theme.WallpaperChangeReceiver
+import dev.patrickgold.florisboard.ime.window.ImeFormFactor
 import dev.patrickgold.florisboard.ime.window.ImeRootView
 import dev.patrickgold.florisboard.ime.window.ImeWindowController
 import dev.patrickgold.florisboard.lib.devtools.LogTopic
@@ -393,6 +397,11 @@ class FlorisImeService : LifecycleInputMethodService() {
             // A new editor field invalidates any in-progress emoji search (issue #110); drop it so we
             // don't reappear on an unrelated field. imeUiMode is reset to TEXT just below anyway.
             keyboardManager.closeEmojiSearch(returnToMedia = false)
+            // The same for every other field of the keyboard's own (issue #424) — the GIF, sticker and
+            // clipboard searches used to survive into the next app's field. The translate bar writes into
+            // the field it was opened on, so a new field ends it without a last write, which would land in
+            // the wrong place. A restart of the same field (an app changing its input type) leaves them.
+            if (!restarting) keyboardManager.closeInternalFields(finishTranslate = false)
             if (activeState.imeUiMode != ImeUiMode.CLIPBOARD || prefs.clipboard.historyHideOnNextTextField.get()) {
                 activeState.imeUiMode = ImeUiMode.TEXT
             }
@@ -408,6 +417,12 @@ class FlorisImeService : LifecycleInputMethodService() {
         // it now that we are back on the field. Skips instant-recording when it kicks in.
         val startedFileTranscription =
             dev.patrickgold.florisboard.dictate.DictateController.consumePendingFileTranscription(this)
+
+        // Scan text (issue #390): the same trampoline shape as the file transcription above. A scan that
+        // belongs to another app is dropped inside consumePendingScan rather than shown here; a session
+        // left over from a previous field is dropped for the same reason.
+        dev.patrickgold.florisboard.dictate.scan.ScanController.clearIfForeign(this)
+        val startedScan = dev.patrickgold.florisboard.dictate.scan.ScanController.consumePendingScan(this)
 
         val instantRecordingOn = prefs.dictate.instantRecording.get()
 
@@ -438,6 +453,7 @@ class FlorisImeService : LifecycleInputMethodService() {
 
         // Instant recording: optionally start dictation as soon as the keyboard opens on a field.
         if (!startedFileTranscription &&
+            !startedScan &&
             !offeredInterrupted &&
             !restarting &&
             instantRecordingAllowedHere &&
@@ -469,6 +485,19 @@ class FlorisImeService : LifecycleInputMethodService() {
             || prefs.physicalKeyboard.showOnScreenKeyboard.get()
     }
 
+    /**
+     * The user tapped the app's text field. Only the keyboard's own fields care: the translate bar
+     * (issue #424) hands the keys back to the app, a search closes (#394). Not every app reports this — a
+     * tap that moves the cursor is also caught in [onUpdateSelection] — but it is the one signal for a tap
+     * that lands exactly where the cursor already was.
+     */
+    override fun onViewClicked(focusChanged: Boolean) {
+        super.onViewClicked(focusChanged)
+        if (keyboardManager.translateQuery.value != null || keyboardManager.activeInternalField() != null) {
+            keyboardManager.onEditorClicked()
+        }
+    }
+
     override fun onUpdateSelection(
         oldSelStart: Int,
         oldSelEnd: Int,
@@ -479,6 +508,9 @@ class FlorisImeService : LifecycleInputMethodService() {
     ) {
         flogInfo { "old={start=$oldSelStart,end=$oldSelEnd} new={start=$newSelStart,end=$newSelEnd} composing={start=$candidatesStart,end=$candidatesEnd}" }
         super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd, candidatesStart, candidatesEnd)
+        // A cursor the keyboard did not move means the user is working in the app's field again: the
+        // translate bar gives the keys back (#424), a search closes (#394).
+        keyboardManager.onAppSelectionChanged(oldSelStart, oldSelEnd, newSelStart, newSelEnd)
         activeState.batchEdit {
             activeState.isSelectionMode = (newSelEnd - newSelStart) != 0
             editorInstance.handleSelectionUpdate(
@@ -514,6 +546,10 @@ class FlorisImeService : LifecycleInputMethodService() {
         // picker the keyboard may reappear without a fresh onStartInputView, so also check here. The
         // claim mechanism makes this idempotent with the onStartInputView call.
         dev.patrickgold.florisboard.dictate.DictateController.consumePendingFileTranscription(this)
+        // And the same fallback for a scan (issue #390) — returning from a camera app is exactly the
+        // route that brings the window back without a new input view. Claiming is a single directory
+        // rename, so whichever hook runs first wins and the other finds nothing.
+        dev.patrickgold.florisboard.dictate.scan.ScanController.consumePendingScan(this)
     }
 
     override fun onWindowHidden() {
@@ -523,12 +559,19 @@ class FlorisImeService : LifecycleInputMethodService() {
         // an active recording this is the normal teardown. A recording the keyboard does not own — the
         // floating button's, or the system voice input's — is left running (issue #293).
         dev.patrickgold.florisboard.dictate.DictateController.stashRecordingOnHide(this)
+        // Hiding the keyboard closes its own fields (issue #424). A translation ends the way closing the
+        // bar does: what was typed is still translated into the field, which has not changed.
+        keyboardManager.closeInternalFields(finishTranslate = true)
         if (windowController.onWindowHidden()) {
             flogInfo(LogTopic.IMS_EVENTS)
+            // The scan session deliberately survives a hidden window: the trip to the camera is itself
+            // one, so clearing here would mean backing out of the camera landed on an empty panel. What
+            // bounds it instead is ScanController.clearIfForeign (issue #390).
             activeState.batchEdit {
                 activeState.imeUiMode = ImeUiMode.TEXT
                 activeState.isActionsOverflowVisible = false
                 activeState.isActionsEditorVisible = false
+                activeState.isTranscriptionProviderSelectionVisible = false
             }
         } else {
             flogWarning(LogTopic.IMS_EVENTS) { "Ignoring (is already hidden)" }
@@ -540,11 +583,16 @@ class FlorisImeService : LifecycleInputMethodService() {
         if (config.orientation != Configuration.ORIENTATION_LANDSCAPE) {
             return false
         }
-        return when (prefs.keyboard.landscapeInputUiMode.get()) {
-            LandscapeInputUiMode.DYNAMICALLY_SHOW -> super.onEvaluateFullscreenMode()
-            LandscapeInputUiMode.NEVER_SHOW -> false
-            LandscapeInputUiMode.ALWAYS_SHOW -> true
-        }
+        // The window controller's root insets are measured by the keyboard view, which does not exist
+        // yet the first time the framework asks – so the window size comes from the configuration, the
+        // same source the platform reads the orientation from a few lines up.
+        val formFactor = ImeFormFactor.of(
+            DpRect(0.dp, 0.dp, config.screenWidthDp.dp, config.screenHeightDp.dp),
+        )
+        return prefs.keyboard.landscapeInputUiMode.get().showsFullscreenInput(
+            formFactor = formFactor,
+            platformWouldShow = super.onEvaluateFullscreenMode(),
+        )
     }
 
     override fun onUpdateExtractingVisibility(info: EditorInfo?) {

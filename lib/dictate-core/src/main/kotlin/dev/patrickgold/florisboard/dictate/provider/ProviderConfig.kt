@@ -68,7 +68,8 @@ data class ProviderConfig(
     /**
      * Curated model ids for providers without an OpenAI-style `/models` catalog (ElevenLabs, Deepgram,
      * AssemblyAI, issue #143): [OpenAiCompatibleClient.listModels] returns these offline so the model
-     * picker and connection test work without a live `/models` call.
+     * picker fills without a live `/models` call. Not a connection test — that has its own authenticated
+     * request per provider, because a list compiled into the app can never fail (#384).
      */
     val curatedModels: List<String> = emptyList(),
 ) {
@@ -143,6 +144,18 @@ enum class TranscriptionApi {
      * language rather than one per response. See [OpenAiCompatibleClient].
      */
     AZURE_FAST_TRANSCRIPTION,
+
+    /**
+     * xAI Grok Voice Transcribe (issue #435): one `multipart/form-data` POST to `stt` with a Bearer key,
+     * the transcript in `text`.
+     *
+     * Not [OPENAI_MULTIPART] under another path, for three reasons that each change the request: the
+     * vocabulary travels as repeated `keyterm` fields rather than a free-text `prompt`, which the
+     * endpoint does not have; `language` only switches on number formatting — recognition is
+     * multilingual regardless — and needs `format=true` beside it; and the `file` part has to come
+     * **last**, because xAI streams the upload and may ignore fields that arrive after it.
+     */
+    XAI_STT,
 
     /**
      * On-device transcription (issue #104): no network call at all. Handled by

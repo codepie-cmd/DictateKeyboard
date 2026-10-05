@@ -19,6 +19,9 @@ package dev.patrickgold.florisboard.ime.keyboard
 import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Numbers
+import androidx.compose.material.icons.outlined.CloudSync
+import androidx.compose.material.icons.outlined.DocumentScanner
+import androidx.compose.material.icons.outlined.Translate
 import androidx.compose.material.icons.outlined.Gif
 import androidx.compose.material.icons.automirrored.filled.ArrowRightAlt
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
@@ -34,7 +37,10 @@ import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.ContentCut
 import androidx.compose.material.icons.filled.ContentPasteGo
 import androidx.compose.material.icons.filled.DeleteSweep
+import androidx.compose.material.icons.filled.Dialpad
 import androidx.compose.material.icons.filled.Done
+import androidx.compose.material.icons.filled.EditNote
+import androidx.compose.material.icons.filled.HighlightAlt
 import androidx.compose.material.icons.filled.FontDownload
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
@@ -57,6 +63,7 @@ import androidx.compose.material.icons.filled.SelectAll
 import androidx.compose.material.icons.filled.SentimentSatisfiedAlt
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.SpaceBar
+import androidx.compose.material.icons.filled.VerticalSplit
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.ui.graphics.vector.ImageVector
 import dev.patrickgold.florisboard.FlorisImeService
@@ -243,6 +250,12 @@ fun ComputingEvaluator.computeImageVector(data: KeyData): ImageVector? {
         KeyCode.CLIPBOARD_SELECT_ALL -> {
             Icons.Default.SelectAll
         }
+        // The "Select" toggle of the editing panel (issue #386): after it, the arrows drag a selection
+        // instead of moving the cursor. A marquee with a pointer, because that is the gesture it stands
+        // in for — deliberately not the filled SelectAll square next to it, which means *everything*.
+        KeyCode.CLIPBOARD_SELECT -> {
+            Icons.Default.HighlightAlt
+        }
         KeyCode.CLIPBOARD_CLEAR_PRIMARY_CLIP -> {
             Icons.Default.DeleteSweep
         }
@@ -251,11 +264,25 @@ fun ComputingEvaluator.computeImageVector(data: KeyData): ImageVector? {
         KeyCode.TOGGLE_COMPACT_LAYOUT -> {
             context()?.vectorResource(id = R.drawable.ic_accessibility_one_handed)
         }
+        // One icon for both directions (issue #362), the way the one-handed toggle does it: the keyboard
+        // right below the button is either split or it is not, and no icon says that better.
+        KeyCode.SPLIT_LAYOUT -> {
+            Icons.Default.VerticalSplit
+        }
         // One icon for both states on purpose (issue #333), the way the one-handed toggle does it: the
         // digit row sits directly under this button, so whether it is there is the plainest feedback
         // available and an icon that also flips would only say it twice.
         KeyCode.TOGGLE_NUMBER_ROW -> {
             Icons.Default.Numbers
+        }
+        // The number pad, reachable from the Smartbar since issue #388. Only there: on the keyboard this
+        // key has always worn a 2×2 block of digits as its label — "1 2 / 3 4", which is what the symbol
+        // layer shows and what people recognise — and that label is two lines of tiny text inside a round
+        // Smartbar button. A dial pad rather than the "#" of the number-row toggle right above, because
+        // the two are easy to confuse and do very different things: one folds a row away, the other
+        // replaces the whole keyboard.
+        KeyCode.VIEW_NUMERIC_ADVANCED -> {
+            Icons.Default.Dialpad.takeIf { evaluator.keyboard.mode == KeyboardMode.SMARTBAR_QUICK_ACTIONS }
         }
         KeyCode.TOGGLE_FLOATING_WINDOW -> {
             val enabledIcon = context()?.vectorResource(id = R.drawable.ic_floating_keyboard)
@@ -311,6 +338,15 @@ fun ComputingEvaluator.computeImageVector(data: KeyData): ImageVector? {
         KeyCode.IME_UI_MODE_STICKER -> {
             Icons.Outlined.Sticker
         }
+        KeyCode.IME_UI_MODE_EDITING -> {
+            Icons.Default.EditNote
+        }
+        KeyCode.IME_UI_MODE_SCAN -> {
+            Icons.Outlined.DocumentScanner
+        }
+        KeyCode.TRANSLATE -> {
+            Icons.Outlined.Translate
+        }
         KeyCode.IME_UI_MODE_DICTATE -> {
             when (dev.patrickgold.florisboard.dictate.DictateController.state.value) {
                 // While recording: a "send" arrow for batch (tapping submits the recording), but a stop
@@ -350,6 +386,11 @@ fun ComputingEvaluator.computeImageVector(data: KeyData): ImageVector? {
         KeyCode.DICTATE_REINSERT -> {
             // Re-inserts the last successful dictation; a history glyph signals "bring the last one back".
             Icons.Default.History
+        }
+        KeyCode.DICTATE_SWITCH_PROVIDER -> {
+            // The transcription provider picker (issue #431): a cloud with the swap arrows, the glyph the
+            // request itself sketched.
+            Icons.Outlined.CloudSync
         }
         KeyCode.LANGUAGE_SWITCH -> {
             Icons.Default.Language
